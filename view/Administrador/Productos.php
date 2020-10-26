@@ -82,19 +82,19 @@
       
     </div>-->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-1 bg-dark">.col-1<br>Since 9 .</div>
-            <div class="col-2 bg-success">.col-2</div>
-            <div class="col-5 bg-primary">.col-2</div>
-            <div class="col-12 bg-danger">.col-2</div>
+
+    <table class="table table-borderless w-25 text-center">
+        <tr>
+            <td rowspan="2" class="align-middle">ICONO</td>
+            <td>ICONO</td>
+        </tr>
+        <tr>
+            <td>ICONO</td>
+        </tr>
+        </tbody>
+    </table>
 
 
-        </div>
-      
-    </div>
-    
-    
 
 
 

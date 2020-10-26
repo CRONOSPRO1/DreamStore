@@ -39,7 +39,7 @@
                     33,
                     23,
                     2,
-                    2
+                    1212
                 ],
                 lineTension: 0,
                 backgroundColor: 'transparent',
@@ -91,7 +91,6 @@ $("#notificacionesclick").click(function() {
     if (notiabiertas.style.display != 'none') {
         notiabiertas.style.display = 'none';
 
-
     } else {
         notiabiertas.style.display = 'block'
 
@@ -104,8 +103,6 @@ $("#perfil").click(function() {
     var notiabiertas = document.getElementById("ventanaperfil");
     if (notiabiertas.style.display != 'none') {
         notiabiertas.style.display = 'none';
-
-
     } else {
         notiabiertas.style.display = 'block'
 
