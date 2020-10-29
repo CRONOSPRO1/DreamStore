@@ -4,7 +4,7 @@
         <h2 class="h2">Productos</h2>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <button type="button" class="btn  btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn  btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-minus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                             <path fill-rule="evenodd" d="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-primary">Exportar PDF</button>
+                <button type="button" class="btn btn-sm btn-outline-info">Exportar PDF</button>
 
 
             </div>
@@ -81,18 +81,67 @@
         </div>
       
     </div>-->
+    <br>
 
 
-    <table class="table table-borderless w-25 text-center">
-        <tr>
-            <td rowspan="2" class="align-middle">ICONO</td>
-            <td>ICONO</td>
-        </tr>
-        <tr>
-            <td>ICONO</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="container-sm w-75">
+        <div class="float-left ">
+            <table class="table table-sm table-borderless w-100  bg-white shadow">
+                <tr>
+                    <td rowspan="2" class="align-middle w-25  bg-danger  text-white">
+                        <span class="btn bg-danger text-white w-100 ">
+                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-cart-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                <path fill-rule="evenodd" d="M6 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+                            </svg>
+                        </span>
+                    </td>
+                    <td colspan="2" ><span class="h6">Productos eliminado</span></td>
+                </tr>
+                <tr class=" border-top  w-75">
+                    <td class="w-25">
+                        <span class="text-danger text-left w-100 ">
+                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </span>
+                    </td>
+                    <td class="w-75"><span class="h5  text-danger ">24</span> </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="float-right ">
+            <table class="table table-sm table-borderless w-100  bg-white shadow">
+                <tr>
+                    <td rowspan="2" class="align-middle w-25  bg-success  text-white">
+                        <span class="btn bg-success text-white w-100 ">
+                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+
+                        </span>
+                    </td>
+                    <td colspan="2"><span class="h6">Productos agregados</span></td>
+                </tr>
+                <tr class=" border-top  w-75">
+                    <td class="w-25">
+                        <span class="text-success text-left w-100 ">
+                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+                            </svg>
+                        </span>
+                    </td>
+                    <td class="w-75"><span class="h5  text-success ">24</span> </td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
 
 
 
@@ -101,8 +150,8 @@
 
 
     <!--Iconos contadores de productos -->
-
-    <!--<div class="container w-50 py-3 ">
+    <!--
+    <div class="container w-50 py-3 ">
         <div class="float-left w-25">
             <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
@@ -130,13 +179,14 @@
                 <input type="text" value="2" class="form-control text-center" disabled aria-label="Username" readonly aria-describedby="inputGroup-sizing-lg" disable>
             </div>
         </div>
-    </div>-->
+    </div>
 
 
-
-    <canvas class="my-4 w-100" id="myChart" width="300" height="80"></canvas>
+    <!---  -->
+    <canvas class="my-4 w-100" id="myChart" width="300" height="115"></canvas>
 
     <hr>
+
 
 
 
@@ -144,7 +194,7 @@
     <div class="container-md w-25">
         <div class="input-group mb-3 ">
             <div class="input-group-prepend">
-                <input type="text" class="form-control border border-success rounded-top " placeholder="Buscar productos" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input type="text" class="form-control w-100 border border-success rounded-top " placeholder="Buscar productos" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-outline-success active" type="button" id="button-addon1"><span>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -225,7 +275,7 @@
     </div>
 
 
-    <div class="modal" tabindex="-1" id="hola">
+    <div class="modal" tabindex="-1" id="productos">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -249,7 +299,7 @@
 </div>
 <script>
     function mostarDetalles() {
-        $('#hola').modal('show');
+        $('#productos').modal('show');
     }
 </script>
 

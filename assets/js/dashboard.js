@@ -39,7 +39,7 @@
                     33,
                     23,
                     2,
-                    1212
+                    1
                 ],
                 lineTension: 0,
                 backgroundColor: 'transparent',

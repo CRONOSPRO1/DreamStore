@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard Template · Bootstrap</title>
+    <title>Administrador</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -135,7 +135,7 @@
                 <div class="sidebar-sticky pt-3 ">
                     <ul class="nav flex-column mt-2">
                         <li class="nav-item">
-                            <a class="nav-link " href="#">
+                            <a class="nav-link " href="../Administrador/Home.php">
                                 <span data-feather="home"></span> Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
