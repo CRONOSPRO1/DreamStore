@@ -103,11 +103,13 @@ $("#perfil").click(function() {
     var notiabiertas = document.getElementById("ventanaperfil");
     if (notiabiertas.style.display != 'none') {
         notiabiertas.style.display = 'none';
+
     } else {
         notiabiertas.style.display = 'block'
 
     }
 });
+
 
 /*
 $("#perfil").click(function() {
