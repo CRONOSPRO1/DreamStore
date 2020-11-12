@@ -195,37 +195,105 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Informacion</h5>
+                    <h5 class="modal-title">Informacion de compra</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <div class="card w-100">
-                        <div class="card-header text-center">
-                            <img src="../../assets/img/perfil.png" class="card-img-top rounded  w-25" alt="...">
-                        </div>
+                    <div class="col-md-auto w-100 text-center">
+                        <span class="h6">Compra #2267035317 - 29 de diciembre</span>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="container-fluid mt-3 text-left">
+
+                            <li class="list-group-item ">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3" class="pr-3">
+                                            <span>
+                                                <img src="../../assets/img/perfil.png" width="30em" height="30em" alt="">
+                                            </span>
+                                        </td>
+                                        <td><strong>Producto</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Audifonos Sony</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="text-success">$33.000</span></td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                            <li class="list-group-item">
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="pr-3">
+                                            <span>
+                                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zm4.854-7.85a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                                </svg>
+                                            </span>
+                                        </td>
+                                        <td><strong>Vendedor</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>123</td>
+
+                                    </tr>
+                                </table>
+                            </li>
+
+                            <li class="list-group-item">
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="pr-3">
+                                            <span>
+                                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                                </svg>
+                                            </span>
+                                        </td>
+                                        <td><strong>Comprador</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>123</td>
+
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="list-group-item">
+                                <table>
+                                    <tr>
+                                        <td rowspan="2" class="pr-3">
+                                            <span>
+                                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path fill-rule="evenodd" d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>
+                                            </span>
+                                        </td>
+                                        <td><strong>Dirección</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>123</td>
+
+                                    </tr>
+                                </table>
+                            </li>
+
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
+                        <br>
+                        <button type="button" class="btn btn-info">Generar recibo</button>
                     </div>
+                    
                 </div>
-
+                
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                   
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
                 </div>
             </div>
         </div>

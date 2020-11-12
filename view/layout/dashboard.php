@@ -75,7 +75,7 @@ $direccion = "http://" . $host . $url;
                                     <div class="pl-3" title="Autor">
                                     </div>
                                     <div style="max-width:100%;">
-                                    
+
                                         <a class="a-notificaciones p-0 text-dark mt-0" href="#">Quedán menos de 10 cantidades para los martillos</a>
                                         <p class="text-muted notificaciones-descri">Descripción</p>
 

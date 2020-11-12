@@ -71,6 +71,7 @@ body {
 .sidebar .nav-link:hover {
     color: #ffffff;
     background-color: rgba(0, 199, 189, 0.747) !important;
+    font-size: 1.2em;
 }
 
 .sidebar .nav-link:hover .feather,
