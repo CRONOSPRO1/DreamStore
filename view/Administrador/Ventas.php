@@ -1,4 +1,4 @@
-<?php require_once '../layout/dashboard.php'; ?>
+<?php require_once 'view/layout/dashboard.php'; ?>
 <main role="main" class="col-md-9 ml-sm-auto  col-lg-10 px-md-4">
     <div class="d-flex justify-content-between mr-1 flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom">
         <h2 class="h2">Ventas</h2>
@@ -64,4 +64,4 @@
     <hr>
 
 
-    <?php require_once '../layout/footer.php'; ?>
+    <?php require_once 'view/layout/footer.php'; ?>

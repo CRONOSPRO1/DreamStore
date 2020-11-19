@@ -14,8 +14,8 @@ $direccion = "http://" . $host . $url;
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/select2.min.css">
+    <link rel="stylesheet" href="<?=base_url?>/assets/css/main.css">
+    <link rel="stylesheet" href="<?=base_url?>/assets/css/select2.min.css">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -33,7 +33,7 @@ $direccion = "http://" . $host . $url;
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="../../assets/css/dashboard.css" rel="stylesheet">
+    <link href="<?=base_url?>assets/css/dashboard.css" rel="stylesheet">
 </head>
 <script>
     $('.popover-dismiss').popover({
@@ -143,9 +143,9 @@ $direccion = "http://" . $host . $url;
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/usuarios.php") {
+                            <a class="nav-link <?php if ($direccion == "http://localhost/dreamstore/Administrador/usuarios") {
                                                     echo "active";
-                                                } ?> " href="../Administrador/usuarios.php">
+                                                } ?> " href="<?=url_Administrador?>Usuarios">
                                 <span data-feather="users"></span> Usuarios
                             </a>
                         </li>
@@ -157,7 +157,7 @@ $direccion = "http://" . $host . $url;
                         <li class="nav-item  ">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/Productos.php") {
                                                     echo "active";
-                                                } ?> " href="../administrador/Productos.php">
+                                                } ?> " href="<?=url_Administrador?>Productos">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-seam" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
@@ -169,7 +169,7 @@ $direccion = "http://" . $host . $url;
                         <li class="nav-item">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/ventas.php") {
                                                     echo "active";
-                                                } ?>" href="../administrador/ventas.php">
+                                                } ?>" href="<?=url_Administrador?>Ventas">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z" />
@@ -182,7 +182,7 @@ $direccion = "http://" . $host . $url;
                         <li class="nav-item">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/Compras.php") {
                                                     echo "active";
-                                                } ?> " href="../administrador/Compras.php">
+                                                } ?> " href="<?=url_Administrador?>Compras">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
@@ -194,7 +194,7 @@ $direccion = "http://" . $host . $url;
                         <li class="nav-item">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/Empresas.php") {
                                                     echo "active";
-                                                } ?> " href="#">
+                                                } ?> " href="<?=url_Administrador?>Empresas">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-building" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
@@ -224,7 +224,7 @@ $direccion = "http://" . $host . $url;
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../administrador/quejas.php">
+                            <a class="nav-link " href="<?=url_Administrador?>Quejas">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-break" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M9 0H4a2 2 0 0 0-2 2v7h1V2a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 5H13v4h1V5L9 0zm5 12h-1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2H2v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2zM0 10.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
@@ -235,7 +235,7 @@ $direccion = "http://" . $host . $url;
                     </ul>
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
+                        <span>Generar reportes</span>
                         <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
                             <span data-feather="plus-circle"></span>
                         </a>
@@ -243,23 +243,19 @@ $direccion = "http://" . $host . $url;
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Current month
+                                <span data-feather="file-text"></span> Este mes
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Last quarter
+                                <span data-feather="file-text"></span> Mes Anterior
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Social engagement
+                                <span data-feather="file-text"></span> Todo el año
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Year-end sale
-                            </a>
                         </li>
                     </ul>
                 </div>

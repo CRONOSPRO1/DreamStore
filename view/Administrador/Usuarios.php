@@ -1,4 +1,4 @@
-<?php require_once '../layout/dashboard.php'; ?>
+<?php require_once 'view/layout/dashboard.php'; ?>
 <main role="main" class="col-md-9 ml-sm-auto  col-lg-10 px-md-4">
     <div class="d-flex justify-content-between mr-1 flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom">
         <h2 class="h2">Usuarios</h2>
@@ -42,7 +42,7 @@
                             </svg>
                         </span>
                     </td>
-                    <td colspan="2"><span class="h6">Usuarios agregados</span></td>
+                    <td colspan="2"><span class="h6">Usuarios nuevos</span></td>
                 </tr>
                 <tr class=" border-top  w-75">
                     <td class="w-25">
@@ -67,7 +67,7 @@
                                 <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                         </span>
                     </td>
-                    <td colspan="2"><span class="h6">Usuarios agregados</span></td>
+                    <td colspan="2"><span class="h6">Usuarios eliminados</span></td>
                 </tr>
                 <tr class=" border-top  w-75">
                     <td class="w-25">
@@ -133,64 +133,52 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
+                    <?php foreach ($this->model_usuario->listar_usuarios() as $row) : ?>
+                        <td><?= $row['id_cli_pro'] ?></td>
+                        <td><?= $row['nombre'] ?></td>
+                        <td class="w-25 "><?= $row['apellido'] ?></td>
+                        <td><?= $row['telefono'] ?></td>
+                        <td><?= $row['email'] ?></td>
+                        <td><?= $row['ciudad'] ?></td>
 
 
 
-                    <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles()">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
+                        <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles(
+                           ' <?= $row['id_cli_pro'] ?>',
+                        '<?= $row['nombre'] ?>',
+                        '<?= $row['apellido'] ?>',
+                        '<?= $row['numero_identificacion'] ?>',
+               
+                        '<?= $row['ciudad'] ?>',
+                        '<?= $row['email'] ?>',
+                        '<?= $row['telefono'] ?>'
+                        )">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
+                                    <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                </svg></a></td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
+            <?php endforeach; ?>
 
-                    <td><a class="btn btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-                    <td><a class="btn btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-                    <td><a class="btn  btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
             </tbody>
         </table>
     </div>
 
+    <script>
+        function mostarDetalles(id_cli_pro,nombre, apellido, numero_identificacion, ciudad, email, telefono) {
+            $('#usuarios').modal('show');
+
+
+            var nombre_apellido = nombre + apellido;
+            document.getElementById("id_cli_pro").innerHTML = id_cli_pro;
+            document.getElementById("nombre_apellido").innerHTML = nombre_apellido;
+            document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
+            document.getElementById("ciudad").innerHTML = ciudad;
+            document.getElementById("email").innerHTML = email;
+            document.getElementById("telefono").innerHTML = telefono;
+
+        }
+    </script>
 
     <!--<div class=" w-50 h-25" id="particles-js"></div>-->
     <div class="modal" tabindex="-1" id="usuarios">
@@ -207,13 +195,12 @@
                     <div class="card w-100">
                         <div class="card-header text-center" id="fondo_usuario">
 
-                            <img src="../../assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
+                            <img src="<?=base_url?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
                         </div>
-                        <h5 class="card-title bg-dark text-white p-1 text-center">Juan Arevalo</h5>
-
+                        <h5 class="card-title bg-dark text-white p-1 text-center" id="nombre_apellido"></h5>
 
                         <div class="card-body">
-                        <h5 class="card-title">Informacion de usuario</h5>
+                            <h5 class="card-title">Informacion de usuario</h5>
                             <li class="list-group-item">
                                 <table>
                                     <tr>
@@ -225,7 +212,7 @@
                                         <td><strong>Numero de identificacion</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>10026912123</td>
+                                        <td id="numero_identificacion"></td>
                                     </tr>
                                 </table>
                             </li>
@@ -242,7 +229,7 @@
                                         <td><strong>Telefono</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>10026912123</td>
+                                        <td id="telefono"></td>
 
                                     </tr>
                                 </table>
@@ -260,7 +247,7 @@
                                         <td><strong>Email</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>10026912123</td>
+                                        <td id="email"></td>
 
                                     </tr>
                                 </table>
@@ -279,7 +266,8 @@
                                         <td><strong>Ciudad</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>10026912123</td>
+                                        <td id="ciudad"></td>
+                                        <td id="id_cli_pro"></td>
 
                                     </tr>
                                 </table>
@@ -322,7 +310,11 @@
                                                     <td><strong>Productos publicados</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>10</td>
+                                                    <td>
+                                                    <?php foreach ($this->model_usuario->productos_persona(1) as $row) {
+                                                            echo $row["resultado"];
+                                                        } ?>
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </li>
@@ -467,11 +459,7 @@
 </div>
 </div>
 
-<script>
-    function mostarDetalles() {
-        $('#usuarios').modal('show');
-    }
-</script>
 
 
-<?php require_once '../layout/footer.php'; ?>
+
+<?php require_once 'view/layout/footer.php'; ?>

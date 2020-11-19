@@ -65,4 +65,6 @@ class ciudadano
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+
+
 }
