@@ -141,7 +141,7 @@
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['ciudad'] ?></td>
 
-                        <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles(
+                        <td> <a class="btn btn-primary "  href="javascript:void(0)" onclick="mostarDetalles(
                            ' <?= $row['id_cli_pro'] ?>',
                         '<?= $row['nombre'] ?>',
                         '<?= $row['apellido'] ?>',
@@ -164,16 +164,16 @@
     <script>
         function mostarDetalles(id_cli_pro, nombre, apellido, numero_identificacion, ciudad, email, telefono) {
             $('#usuarios').modal('show');
-
+            
 
             var nombre_apellido = nombre + apellido;
+            
             document.getElementById("id_cli_pro").innerHTML = id_cli_pro;
             document.getElementById("nombre_apellido").innerHTML = nombre_apellido;
             document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
             document.getElementById("ciudad").innerHTML = ciudad;
             document.getElementById("email").innerHTML = email;
             document.getElementById("telefono").innerHTML = telefono;
-
         }
     </script>
 
@@ -312,7 +312,8 @@
 
                                                     <td>
                                                         <!-- Aun no funciona correctamente  -->
-                                                        <?php foreach ($this->model_productos->productos_usuario(1) as $row) {
+                                                        <?php                                                         
+                                                        foreach ($this->model_productos->productos_usuario("<script>document.write(id_cli_pro)</script>") as $row) {
                                                             echo $row["resultado"];
                                                         } ?>
                                                     </td>

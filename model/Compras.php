@@ -7,7 +7,7 @@ class compras{
         $this->conexion=new conexion();
     
     }
+    
+
 }
-
-
 ?>

@@ -24,6 +24,13 @@ class productos{
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+    
+    public function eliminar_producto($id_producto){
+        $stmt=$this->conexion->conectar()->prepare("");
+        $stmt->bindParam(":id_producto",$id_producto,PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt->closeCursor();
+    }
 }
 
 
