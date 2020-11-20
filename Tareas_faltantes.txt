@@ -1,0 +1,2 @@
+Falta pasarle el id al metodo 
+Vista view/administrador/usuarios.php linea 318

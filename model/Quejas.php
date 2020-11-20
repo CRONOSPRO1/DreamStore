@@ -1,6 +1,6 @@
 <?php
 require_once 'conexion.php';
-class empresa{
+class quejas{
     
     public function __construct()
     {
@@ -8,3 +8,6 @@ class empresa{
     
     }
 }
+
+
+?>

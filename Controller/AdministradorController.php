@@ -1,14 +1,38 @@
 <?php
 require_once 'config/parameters.php';
 require_once 'model/usuario.php';
+require_once 'model/Productos.php';
+require_once 'model/Compras.php';
+require_once 'model/Empresa.php';
+require_once 'model/Ingresos.php';
+require_once 'model/Mis_compras.php';
+require_once 'model/Ventas.php';
+require_once 'model/Quejas.php';
+
 
 class AdministradorController
 {
     public $model_usuario;
+    public $model_productos;
+    public $model_compras;
+    public $model_empresa;
+    public $model_ingresos;
+    public $model_MisCompras;
+    public $model_ventas;
+    public $model_quejas;
+
+
 
     public function __construct()
     {
         $this->model_usuario = new usuario();
+        $this->model_productos = new productos();
+        $this->model_compras = new compras();
+        $this->model_empresa = new empresa();
+        $this->model_ingresos = new ingresos();
+        $this->model_MisCompras = new mis_compras();
+        $this->model_ventas = new ventas();
+        $this->model_quejas = new quejas();
     }
 
     public function index()
@@ -51,11 +75,4 @@ class AdministradorController
     {
         require_once 'view/Administrador/Quejas.php';
     }
-    
-
-
-
-
-
-
 }

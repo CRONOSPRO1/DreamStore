@@ -132,8 +132,8 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach ($this->model_usuario->listar_usuarios() as $row) : ?>
                 <tr>
-                    <?php foreach ($this->model_usuario->listar_usuarios() as $row) : ?>
                         <td><?= $row['id_cli_pro'] ?></td>
                         <td><?= $row['nombre'] ?></td>
                         <td class="w-25 "><?= $row['apellido'] ?></td>
@@ -141,14 +141,11 @@
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['ciudad'] ?></td>
 
-
-
                         <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles(
                            ' <?= $row['id_cli_pro'] ?>',
                         '<?= $row['nombre'] ?>',
                         '<?= $row['apellido'] ?>',
                         '<?= $row['numero_identificacion'] ?>',
-               
                         '<?= $row['ciudad'] ?>',
                         '<?= $row['email'] ?>',
                         '<?= $row['telefono'] ?>'
@@ -165,7 +162,7 @@
     </div>
 
     <script>
-        function mostarDetalles(id_cli_pro,nombre, apellido, numero_identificacion, ciudad, email, telefono) {
+        function mostarDetalles(id_cli_pro, nombre, apellido, numero_identificacion, ciudad, email, telefono) {
             $('#usuarios').modal('show');
 
 
@@ -195,7 +192,7 @@
                     <div class="card w-100">
                         <div class="card-header text-center" id="fondo_usuario">
 
-                            <img src="<?=base_url?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
+                            <img src="<?= base_url ?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
                         </div>
                         <h5 class="card-title bg-dark text-white p-1 text-center" id="nombre_apellido"></h5>
 
@@ -310,11 +307,18 @@
                                                     <td><strong>Productos publicados</strong></td>
                                                 </tr>
                                                 <tr>
+
+
+
                                                     <td>
-                                                    <?php foreach ($this->model_usuario->productos_persona(1) as $row) {
+                                                        <!-- Aun no funciona correctamente  -->
+                                                        <?php foreach ($this->model_productos->productos_usuario(1) as $row) {
                                                             echo $row["resultado"];
                                                         } ?>
                                                     </td>
+
+
+
                                                 </tr>
                                             </table>
                                         </li>
@@ -333,7 +337,14 @@
                                                     <td><strong>Productos vendidos</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>3</td>
+
+
+                                                    <td>
+                                                        <!-- Aun no funciona correctamente , falta pasarle el parametro del id  -->
+                                                        <?php foreach ($this->model_ventas->ventas_usuario(1) as $row) {
+                                                            echo $row["resultado"];
+                                                        } ?>
+                                                    </td>
 
                                                 </tr>
                                             </table>
@@ -373,7 +384,13 @@
                                                     <td><strong>Compras realizadas</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>123</td>
+
+                                                    <td>
+                                                        <!-- Aun no funciona correctamente , falta pasarle el parametro del id  -->
+                                                        <?php foreach ($this->model_MisCompras->Compras_usuario(1) as $row) {
+                                                            echo $row["resultado"];
+                                                        } ?>
+                                                    </td>
 
                                                 </tr>
                                             </table>

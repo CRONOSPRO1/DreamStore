@@ -101,5 +101,19 @@ CREATE TABLE usuarios(
      CONSTRAINT fk_ingresos_clipro  FOREIGN KEY (id_usuario) REFERENCES cli_pro(id_cli_pro)
     )ENGINE=INNODB;
 
+/**/
+SELECT * FROM mis_compras INNER JOIN productos On mis_compras.idProducto=productos.id_producto WHERE idProducto=1
 
+
+/*Consulta para ver los productos vendidos por un usuario o empresa*/
+SELECT COUNT(*) as resultado FROM mis_compras 
+INNER JOIN productos On mis_compras.idProducto=productos.id_producto 
+INNER JOIN cli_pro On productos.id_vendedor=cli_pro.id_cli_pro WHERE id_cli_pro=1;
+
+/*Metodo para mostrar cuantas compras ha hecho un usuario*/
+SELECT COUNT(*) as resultado FROM mis_compras WHERE id_comprador=1;
+
+
+/*Consulta para ver la categoria del producto*/
+SELECT * FROM productos INNER JOIN categorias ON productos.categoria = categorias.id_categoria WHERE categoria=2
 
