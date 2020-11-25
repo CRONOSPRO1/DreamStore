@@ -71,6 +71,7 @@ body {
 .sidebar .nav-link:hover {
     color: #ffffff;
     background-color: rgba(0, 199, 189, 0.747) !important;
+    font-size: 1.2em;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -241,4 +242,9 @@ ul.social-network li {
     background: -ms-linear-gradient(left, rgba(0, 5, 102, 1) 0%, rgba(51, 8, 133, 1) 20%, rgba(122, 12, 175, 1) 48%, rgba(138, 13, 185, 1) 54%, rgba(255, 20, 255, 1) 100%) !important;
     background: linear-gradient(to right, rgba(0, 5, 102, 1) 0%, rgba(51, 8, 133, 1) 20%, rgba(122, 12, 175, 1) 48%, rgba(138, 13, 185, 1) 54%, rgba(255, 20, 255, 1) 100%) !important;
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000566', endColorstr='#ff14ff', GradientType=1) !important;
+}
+
+#fondo_usuario {
+    background-image: url(../img/fondo_usuario5.gif);
+    background-size: 100%;
 }

@@ -1,0 +1,5 @@
+Falta pasarle el id al metodo 
+Vista view/administrador/usuarios.php linea 318+
+
+
+Para  pasar el id por parametro puedo hacer un foreach antes de cargar el modal
