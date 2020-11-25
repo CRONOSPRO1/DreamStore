@@ -1,5 +1,5 @@
 <?php
-require_once'model/usuarios.php';
+require_once'model/usuario.php';
 class ClienteController{
 
     public $model_usuario;
