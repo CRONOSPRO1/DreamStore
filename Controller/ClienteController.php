@@ -10,7 +10,6 @@ class ClienteController{
 
     public function ver_articulo(){
         require_once'view/cliente/ver_articulos.php';
-        echo "hola";
     
     }
 
