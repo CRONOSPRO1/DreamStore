@@ -128,3 +128,24 @@ $("#perfil").click(function() {
         $("#span-margen").removeClass("mr-4").addClass("mr-3")
     }
 });*/
+
+
+//Funcion que despliega la ventana modal de usuarios
+function mostarDetalles_usuario(
+    id_cli_pro, nombre, apellido, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, compras_realizadas, quejas) {
+    $('#usuarios').modal('show');
+
+
+    var nombre_apellido = nombre + " " + apellido;
+
+    document.getElementById("id_cli_pro").innerHTML = id_cli_pro;
+    document.getElementById("nombre_apellido").innerHTML = nombre_apellido;
+    document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
+    document.getElementById("ciudad").innerHTML = ciudad;
+    document.getElementById("email").innerHTML = email;
+    document.getElementById("telefono").innerHTML = telefono;
+    document.getElementById("productos_publicados").innerHTML = productos_publicados;
+    document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
+    document.getElementById("compras_realizadas").innerHTML = compras_realizadas;
+    document.getElementById("quejas").innerHTML = quejas;
+}

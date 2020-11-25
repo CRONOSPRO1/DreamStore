@@ -42,7 +42,7 @@
                             </svg>
                         </span>
                     </td>
-                    <td colspan="2"><span class="h6">Usuarios nuevos</span></td>
+                    <td colspan="2"><span class="h6">Usuarios eliminados</span></td>
                 </tr>
                 <tr class=" border-top  w-75">
                     <td class="w-25">
@@ -53,7 +53,12 @@
                             </svg>
                         </span>
                     </td>
-                    <td class="w-75"><span class="h5  text-danger ">24</span> </td>
+                    <td class="w-75"><span class="h5  text-danger ">
+                            <?php
+                            foreach ($this->model_usuario->usuarios_eliminados() as $row) {
+                                echo $row["resultado"];
+                            } ?>
+                        </span> </td>
                 </tr>
 
             </table>
@@ -67,7 +72,7 @@
                                 <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                         </span>
                     </td>
-                    <td colspan="2"><span class="h6">Usuarios eliminados</span></td>
+                    <td colspan="2"><span class="h6">Usuarios nuevos</span></td>
                 </tr>
                 <tr class=" border-top  w-75">
                     <td class="w-25">
@@ -79,7 +84,12 @@
 
                         </span>
                     </td>
-                    <td class="w-75"><span class="h5  text-success ">24</span> </td>
+                    <td class="w-75"><span class="h5  text-success ">
+                            <?php
+                            foreach ($this->model_usuario->usuarios_nuevos() as $row) {
+                                echo $row["resultado"];
+                            } ?>
+                        </span> </td>
                 </tr>
 
             </table>
@@ -132,8 +142,8 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($this->model_usuario->listar_usuarios() as $row) : ?>
-                <tr>
+                <?php foreach ($this->model_usuario->listar_usuarios() as $row) : ?>
+                    <tr>
                         <td><?= $row['id_cli_pro'] ?></td>
                         <td><?= $row['nombre'] ?></td>
                         <td class="w-25 "><?= $row['apellido'] ?></td>
@@ -141,40 +151,40 @@
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['ciudad'] ?></td>
 
-                        <td> <a class="btn btn-primary "  href="javascript:void(0)" onclick="mostarDetalles(
+                        <td> <a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles_usuario(
                            ' <?= $row['id_cli_pro'] ?>',
                         '<?= $row['nombre'] ?>',
                         '<?= $row['apellido'] ?>',
                         '<?= $row['numero_identificacion'] ?>',
                         '<?= $row['ciudad'] ?>',
                         '<?= $row['email'] ?>',
-                        '<?= $row['telefono'] ?>'
+                        '<?= $row['telefono'] ?>',
+                        '<?php foreach ($this->model_productos->productos_usuario($row['id_cli_pro']) as $resultado) {
+                                echo $resultado["resultado"];
+                            } ?>',
+                        '<?php foreach ($this->model_ventas->ventas_usuario($row['id_cli_pro']) as $resultado) {
+                                echo $resultado["resultado"];
+                            } ?>',
+                        '<?php foreach ($this->model_MisCompras->Compras_usuario($row['id_cli_pro']) as $resultado) {
+                                echo $resultado["resultado"];
+                            } ?>',
+                        ' <?php foreach ($this->model_quejas->queja_cliente($row['id_cli_pro']) as $resultado) {
+                                echo $resultado["resultado"];
+                            } ?>'
                         )">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
                                     <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                 </svg></a></td>
-                </tr>
-            <?php endforeach; ?>
+                    </tr>
+                <?php endforeach; ?>
 
             </tbody>
         </table>
     </div>
 
     <script>
-        function mostarDetalles(id_cli_pro, nombre, apellido, numero_identificacion, ciudad, email, telefono) {
-            $('#usuarios').modal('show');
-            
 
-            var nombre_apellido = nombre + apellido;
-            
-            document.getElementById("id_cli_pro").innerHTML = id_cli_pro;
-            document.getElementById("nombre_apellido").innerHTML = nombre_apellido;
-            document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
-            document.getElementById("ciudad").innerHTML = ciudad;
-            document.getElementById("email").innerHTML = email;
-            document.getElementById("telefono").innerHTML = telefono;
-        }
     </script>
 
     <!--<div class=" w-50 h-25" id="particles-js"></div>-->
@@ -192,7 +202,7 @@
                     <div class="card w-100">
                         <div class="card-header text-center" id="fondo_usuario">
 
-                            <img src="<?= base_url ?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
+                            <img src="<?=base_url ?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
                         </div>
                         <h5 class="card-title bg-dark text-white p-1 text-center" id="nombre_apellido"></h5>
 
@@ -310,12 +320,9 @@
 
 
 
-                                                    <td>
+                                                    <td id="productos_publicados">
                                                         <!-- Aun no funciona correctamente  -->
-                                                        <?php                                                         
-                                                        foreach ($this->model_productos->productos_usuario("<script>document.write(id_cli_pro)</script>") as $row) {
-                                                            echo $row["resultado"];
-                                                        } ?>
+
                                                     </td>
 
 
@@ -340,11 +347,9 @@
                                                 <tr>
 
 
-                                                    <td>
+                                                    <td id="productos_vendidos">
                                                         <!-- Aun no funciona correctamente , falta pasarle el parametro del id  -->
-                                                        <?php foreach ($this->model_ventas->ventas_usuario(1) as $row) {
-                                                            echo $row["resultado"];
-                                                        } ?>
+
                                                     </td>
 
                                                 </tr>
@@ -386,11 +391,9 @@
                                                 </tr>
                                                 <tr>
 
-                                                    <td>
+                                                    <td id="compras_realizadas">
                                                         <!-- Aun no funciona correctamente , falta pasarle el parametro del id  -->
-                                                        <?php foreach ($this->model_MisCompras->Compras_usuario(1) as $row) {
-                                                            echo $row["resultado"];
-                                                        } ?>
+
                                                     </td>
 
                                                 </tr>
@@ -432,7 +435,7 @@
                                                     </td>
                                                     <td><strong>Todas la quejas</strong></td>
                                                     <td rowspan="2" class="w-50 text-right">
-                                                        <a class="btn btn-outline-dark" value="Mostrar todos" href="javascript:void(0)" onclick="mostarDetalles()" data-toggle="tooltip" data-placement="top" title="Ver detalles">
+                                                        <a class="btn btn-outline-dark" value="Mostrar todos" data-toggle="tooltip" data-placement="top" title="Ver detalles">
                                                             <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                                 <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
                                                                 <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -440,7 +443,12 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>10</td>
+
+
+                                                    <td id="quejas">
+                                                        <!--Tambien falta por pasar el parametro -->
+
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </li>

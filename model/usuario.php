@@ -31,7 +31,8 @@ class usuario
             pass,
             telefono,
             imagen,
-            rol
+            rol,
+            fecha_registro
         )
         values(
             :nombre,
@@ -44,7 +45,8 @@ class usuario
             :pass,
             :telefono,
             :imagen,
-            :rol
+            :rol,
+            :fecha_registro
             )");
         $stmt->bindParam(":nombre", $data['nombre'], PDO::PARAM_STR);
         $stmt->bindParam(":apellido", $data['apellido'], PDO::PARAM_STR);
@@ -57,6 +59,7 @@ class usuario
         $stmt->bindParam(":telefono", $data['telefono'], PDO::PARAM_STR);
         $stmt->bindParam(":imagen", $data['imagen'], PDO::PARAM_STR);
         $stmt->bindParam(":rol", $data['rol'], PDO::PARAM_STR);
+        $stmt->bindParam(":fecha_registro", $data['fecha_registro'], PDO::PARAM_STR);
         $stmt->execute();
         $stmt->closeCursor();
     }
@@ -93,4 +96,20 @@ class usuario
         $stmt->execute();
         $stmt->closeCursor();
     }
+
+    //Para contar los usuarios nuevos mensualmente
+    public function usuarios_nuevos(){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE MONTH(fecha_registro) = MONTH(CURRENT_DATE())");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+    public function usuarios_eliminados(){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE MONTH(fecha_registro) = MONTH(CURRENT_DATE()) AND condicion=0 ");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+    
 }

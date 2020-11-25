@@ -19,7 +19,7 @@ if (isset($_GET['controller'])) {
 } else {
 
 
-    echo "La pagina que buscas no existe";
+    require_once'view/error.php';
     exit();
 }
 if (class_exists($nombre_controlador)) {
@@ -28,10 +28,10 @@ if (class_exists($nombre_controlador)) {
         $action = $_GET['action'];
         $controlador->$action();
     } else {
-        echo "la pagina que buscas no existe";
+        require_once'view/error.php';
     }
 } else {
-    echo 'La pagina que buscas no existe';
+    require_once'view/error.php';
 }
 
 ?>

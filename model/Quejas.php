@@ -8,7 +8,7 @@ class quejas{
     
     }
     public function registrar_queja($data){
-        $stmt=$this->conexion->conexion()->prepare("");
+        $stmt=$this->conexion->conectar()->prepare("");
         $stmt->bindParam(":id_usuario",$data['id_usuario'],PDO::PARAM_STR);
         $stmt->bindParam(":queja",$data['queja'],PDO::PARAM_STR);
         $stmt->bindParam(":fecha",$data['fecha'],PDO::PARAM_STR);
@@ -20,7 +20,7 @@ class quejas{
 
     //Muestra cuantas quejas a hecho cada usuario ,pasando como parametro el id
     public function queja_cliente($id_usuario){
-        $stmt=$this->conexion->conexion()->prepare("SELECT COUNT(*) as resultado FROM quejas WHERE id_usuario=:id_usuario");
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) as resultado FROM quejas WHERE id_usuario=:id_usuario");
         $stmt->bindParam(":id_usuario",$id_usuario,PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll();
