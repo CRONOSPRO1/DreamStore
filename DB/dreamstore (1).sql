@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 19-11-2020 a las 18:57:39
+-- Tiempo de generación: 25-11-2020 a las 23:01:36
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -69,7 +69,14 @@ CREATE TABLE IF NOT EXISTS `categorias` (
   `nombre_categoria` varchar(40) DEFAULT NULL,
   `descripcion_categoria` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_categoria`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`) VALUES
+(1, 'Tecnologia', 'Todos los productos de tecnologia ,telefonos ,audifonos,computadores ,etc');
 
 -- --------------------------------------------------------
 
@@ -109,15 +116,18 @@ CREATE TABLE IF NOT EXISTS `cli_pro` (
   `telefono` varchar(30) DEFAULT NULL,
   `imagen` varchar(40) DEFAULT NULL,
   `rol` varchar(30) NOT NULL,
+  `fecha_registro` date NOT NULL DEFAULT current_timestamp(),
+  `condicion` int(11) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id_cli_pro`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cli_pro`
 --
 
-INSERT INTO `cli_pro` (`id_cli_pro`, `nombre`, `apellido`, `numero_identificacion`, `tipo_identificacion`, `direccion`, `ciudad`, `email`, `pass`, `telefono`, `imagen`, `rol`) VALUES
-(1, 'Juan  ', 'Arevalo', '123456789', 'Cedula', 'cra 4 ', 'Bogota', 'arevalojuan48@gmail.com', '123', '123', NULL, 'Usuario');
+INSERT INTO `cli_pro` (`id_cli_pro`, `nombre`, `apellido`, `numero_identificacion`, `tipo_identificacion`, `direccion`, `ciudad`, `email`, `pass`, `telefono`, `imagen`, `rol`, `fecha_registro`, `condicion`) VALUES
+(1, 'Juan  ', 'Arevalo', '123456789', 'Cedula', 'cra 4 ', 'Bogota', 'arevalojuan48@gmail.com', '123', '123', NULL, 'Usuario', '2020-11-20', 1),
+(2, 'Carlos', 'Beltran', '1000022313', 'Cedula', 'Cra 4 cll 2', 'Bogota', 'carlos@gmail.com', '1233', '3123123112', NULL, 'Usuario', '2020-11-20', 0);
 
 -- --------------------------------------------------------
 
@@ -146,11 +156,18 @@ DROP TABLE IF EXISTS `mis_compras`;
 CREATE TABLE IF NOT EXISTS `mis_compras` (
   `id_compra` int(11) NOT NULL AUTO_INCREMENT,
   `id_comprador` int(11) DEFAULT NULL,
-  `id_producto` int(11) DEFAULT NULL,
+  `idProducto` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_compra`),
   KEY `fk_compras_clipro` (`id_comprador`),
-  KEY `fk_compras_producto` (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_compras_producto` (`idProducto`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `mis_compras`
+--
+
+INSERT INTO `mis_compras` (`id_compra`, `id_comprador`, `idProducto`) VALUES
+(1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -178,18 +195,27 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 DROP TABLE IF EXISTS `productos`;
 CREATE TABLE IF NOT EXISTS `productos` (
   `id_producto` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(40) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `ciudades_disponibles` varchar(40) DEFAULT NULL,
-  `id_categoria` int(11) DEFAULT NULL,
+  `ciudad` varchar(40) DEFAULT NULL,
+  `categoria` int(11) DEFAULT NULL,
   `precio` int(100) DEFAULT NULL,
   `imagen` varchar(100) DEFAULT NULL,
   `id_vendedor` int(11) DEFAULT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id_producto`),
-  KEY `fk_productos_categoria` (`id_categoria`),
+  KEY `fk_productos_categoria` (`categoria`),
   KEY `fk_productos_usuarios` (`id_vendedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nombre_producto`, `descripcion`, `cantidad`, `ciudad`, `categoria`, `precio`, `imagen`, `id_vendedor`, `estado`) VALUES
+(1, 'Audifonos Sony', 'Diafragmas de neodimio de 30 mm, Rango de frecuencia 10-24.000 Hz, Diseño plegable compacto\r\n', 2, 'Bogota', 1, 40000, '', 1, 'Disponible'),
+(2, 'Honor 8x', 'Camara 24mp\r\nBateria 3700 Mh', 2, 'Bogota', 1, 700000, NULL, 2, 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -200,13 +226,21 @@ CREATE TABLE IF NOT EXISTS `productos` (
 DROP TABLE IF EXISTS `quejas`;
 CREATE TABLE IF NOT EXISTS `quejas` (
   `id_queja` int(11) NOT NULL AUTO_INCREMENT,
-  `id_persona` int(11) DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL,
   `queja` varchar(255) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
+  `hora` time NOT NULL DEFAULT current_timestamp(),
   `imagen` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_queja`),
-  KEY `fk_quejas_clipro` (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_quejas_clipro` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `quejas`
+--
+
+INSERT INTO `quejas` (`id_queja`, `id_usuario`, `queja`, `fecha`, `hora`, `imagen`) VALUES
+(1, 2, 'Mis productos no se dejan subir a la plataforma', '2020-11-20 00:00:00', '09:18:09', NULL);
 
 --
 -- Restricciones para tablas volcadas
@@ -237,7 +271,7 @@ ALTER TABLE `ingresos`
 --
 ALTER TABLE `mis_compras`
   ADD CONSTRAINT `fk_compras_clipro` FOREIGN KEY (`id_comprador`) REFERENCES `cli_pro` (`id_cli_pro`),
-  ADD CONSTRAINT `fk_compras_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`);
+  ADD CONSTRAINT `fk_compras_producto` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`id_producto`);
 
 --
 -- Filtros para la tabla `pedidos`
@@ -250,14 +284,14 @@ ALTER TABLE `pedidos`
 -- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD CONSTRAINT `fk_productos_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`),
+  ADD CONSTRAINT `fk_productos_categoria` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`id_categoria`),
   ADD CONSTRAINT `fk_productos_usuarios` FOREIGN KEY (`id_vendedor`) REFERENCES `cli_pro` (`id_cli_pro`);
 
 --
 -- Filtros para la tabla `quejas`
 --
 ALTER TABLE `quejas`
-  ADD CONSTRAINT `fk_quejas_clipro` FOREIGN KEY (`id_persona`) REFERENCES `cli_pro` (`id_cli_pro`);
+  ADD CONSTRAINT `fk_quejas_clipro` FOREIGN KEY (`id_usuario`) REFERENCES `cli_pro` (`id_cli_pro`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
