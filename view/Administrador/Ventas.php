@@ -46,7 +46,7 @@
             </tr>
             <tr class=" border-top   text-center">
                 
-                <td class="w-75"><span class="h5  text-success ">24</span> </td>
+                <td class="w-75"><span class="h5  text-success "><?php foreach ($this->model_ventas->ventas_totales() as $row){ echo $row['resultado']; } ?></span> </td>
             </tr>
 
         </table>

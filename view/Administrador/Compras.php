@@ -31,59 +31,30 @@
     <br>
 
 
-    <div class="container-sm w-75">
-        <div class="float-left ">
-            <table class="table table-sm table-borderless w-100  bg-white shadow">
-                <tr>
-                    <td rowspan="2" class="align-middle w-25  bg-danger  text-white">
-                        <span class="btn bg-danger text-white w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </span>
-                    </td>
-                    <td colspan="2"><span class="h6">Usuarios eliminados</span></td>
-                </tr>
-                <tr class=" border-top  w-75">
-                    <td class="w-25">
-                        <span class="text-danger text-left w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
-                            </svg>
-                        </span>
-                    </td>
-                    <td class="w-75"><span class="h5  text-danger ">24</span> </td>
-                </tr>
+    <div class="container-sm w-25">
 
-            </table>
-        </div>
-        <div class="float-right ">
-            <table class="table table-sm table-borderless w-100  bg-white shadow">
-                <tr>
-                    <td rowspan="2" class="align-middle w-25  bg-success  text-white">
-                        <span class="btn bg-success text-white w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                        </span>
-                    </td>
-                    <td colspan="2"><span class="h6">Usuarios eliminados</span></td>
-                </tr>
-                <tr class=" border-top  w-75">
-                    <td class="w-25">
-                        <span class="text-success text-left w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
-                            </svg>
+        <table class="table table-sm table-borderless w-100  bg-white shadow">
+            <tr class="text-center">
+                <td rowspan="2" class="align-middle w-25  bg-success  text-white">
+                    <span class="btn bg-success text-white w-100 ">
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                    </span>
+                </td>
+                <td><span class="h6">Compras realizadas este mes</span></td>
+            </tr>
+            <tr class=" border-top   text-center">
 
-                        </span>
-                    </td>
-                    <td class="w-75"><span class="h5  text-success ">24</span> </td>
-                </tr>
+                <td class="w-75"><span class="h5  text-success ">
+                        <?php foreach ($this->model_miscompras->compras_totales() as $row) {
+                            echo $row['resultado'];
+                        } ?></span> </td>
+            </tr>
 
-            </table>
-        </div>
+        </table>
+
 
     </div>
 
@@ -120,78 +91,44 @@
         <table class="table table-striped table-sm text-center aling-middle">
             <thead class="bg-dark text-white h6">
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Telefono</th>
-                    <th>Email</th>
-
-                    <th>Ciudad</th>
-
+                    <th>Id_compra</th>
+                    <th>Comprador</th>
+                    <th>Fecha</th>
+                    <th>Producto</th>
                     <th>Vista previa</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-
-
-                    <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-                    <td><a class="btn btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-                    <td><a class="btn btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>lorem</td>
-                    <td class="w-25 ">Lorem ipitaque?</td>
-                    <td>lorem</td>
-                    <td>Juan</td>
-                    <td>Bogota</td>
-
-                    <td><a class="btn  btn-primary" href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
+                <?php foreach ($this->model_miscompras->listar_compras() as $row) : ?>
+                    <tr>
+                        <td><?= $row['id_compra'] ?></td>
+                        <td><?= $row['nombre'] ?></td>
+                        <td><?= $row['fecha_venta'] ?></td>
+                        <td><?= $row['nombre_producto'] ?></td>
+                        <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostrarDetalles_compras(
+                        '<?= $row['id_compra'] ?>',
+                        '<?= $row['fecha_venta'] ?>',
+                        '<?= $row['nombre_producto'] ?>',
+                        '<?= $row['precio'] ?>',
+                        '<?php foreach ($this->model_usuario->nombre_vendedor($row['id_vendedor']) as $resultado) {
+                                echo $resultado['resultado'];
+                            } ?>',
+                         '<?php foreach ($this->model_usuario->nombre_vendedor($row['id_comprador']) as $resultado) {
+                                echo $resultado['resultado'];
+                            } ?>',
+                            '<?=$row['direccion']?>'
+                    )"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
+                                    <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                </svg></a></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 
 
-    <div class="modal" tabindex="-1" id="usuarios">
+    <div class="modal" tabindex="-1" id="compras">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -203,7 +140,7 @@
                 <div class="modal-body">
 
                     <div class="col-md-auto w-100 text-center">
-                        <span class="h6">Compra #2267035317 - 29 de diciembre</span>
+                        <span class="h6">Compra#<span id="id_compra"></span> <br> Fecha <span id="fecha_compra"></span></span>
 
                         <div class="container-fluid mt-3 text-left">
 
@@ -218,10 +155,10 @@
                                         <td><strong>Producto</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>Audifonos Sony</td>
+                                        <td id="nombre_producto">Audifonos Sony</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="text-success">$33.000</span></td>
+                                        <td>$<span class="text-success" id="precio"></span></td>
                                     </tr>
                                 </table>
                             </li>
@@ -239,7 +176,7 @@
                                         <td><strong>Vendedor</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>123</td>
+                                        <td id="nombre_vendedor"></td>
 
                                     </tr>
                                 </table>
@@ -255,10 +192,10 @@
                                                 </svg>
                                             </span>
                                         </td>
-                                        <td><strong>Comprador</strong></td>
+                                        <td ><strong>Comprador</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>123</td>
+                                        <td id="nombre_comprador"></td>
 
                                     </tr>
                                 </table>
@@ -277,7 +214,7 @@
                                         <td><strong>Dirección</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>123</td>
+                                        <td id="direccion"></td>
 
                                     </tr>
                                 </table>
@@ -287,11 +224,11 @@
                         <br>
                         <button type="button" class="btn btn-info">Generar recibo</button>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="modal-footer">
-                   
+
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 
                 </div>
@@ -301,11 +238,7 @@
 </main>
 </div>
 </div>
-<script>
-    function mostarDetalles() {
-        $('#usuarios').modal('show');
-    }
-</script>
+
 
 
 <?php require_once 'view/layout/footer.php'; ?>

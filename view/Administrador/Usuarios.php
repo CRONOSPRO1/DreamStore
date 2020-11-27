@@ -151,8 +151,7 @@
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['ciudad'] ?></td>
 
-                        <td> <a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles_usuario(
-                           ' <?= $row['id_cli_pro'] ?>',
+                        <td> <a class="btn btn-primary " href="javascript:void(0)" onclick="mostrarDetalles_usuario(
                         '<?= $row['nombre'] ?>',
                         '<?= $row['apellido'] ?>',
                         '<?= $row['numero_identificacion'] ?>',
@@ -165,7 +164,7 @@
                         '<?php foreach ($this->model_ventas->ventas_usuario($row['id_cli_pro']) as $resultado) {
                                 echo $resultado["resultado"];
                             } ?>',
-                        '<?php foreach ($this->model_MisCompras->Compras_usuario($row['id_cli_pro']) as $resultado) {
+                        '<?php foreach ($this->model_miscompras->compras_usuario($row['id_cli_pro']) as $resultado) {
                                 echo $resultado["resultado"];
                             } ?>',
                         ' <?php foreach ($this->model_quejas->queja_cliente($row['id_cli_pro']) as $resultado) {
@@ -274,7 +273,6 @@
                                     </tr>
                                     <tr>
                                         <td id="ciudad"></td>
-                                        <td id="id_cli_pro"></td>
 
                                     </tr>
                                 </table>

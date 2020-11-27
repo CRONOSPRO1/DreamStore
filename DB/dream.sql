@@ -117,3 +117,23 @@ SELECT COUNT(*) as resultado FROM mis_compras WHERE id_comprador=1;
 /*Consulta para ver la categoria del producto*/
 SELECT * FROM productos INNER JOIN categorias ON productos.categoria = categorias.id_categoria WHERE categoria=2
 
+SELECT * FROM productos INNER JOIN ca
+
+
+
+SELECT * FROM productos INNER JOIN categorias ON productos.categoria = categorias.id_categoria  WHERE categoria=id_categoria 
+
+
+SELECT id_cli_pro FROM id_cli_pro where condicion=1
+
+
+/*Consulta para mostrar los productos de usuarios que no se han eliminado */
+SELECT * FROM cli_pro 
+INNER JOIN productos ON cli_pro.id_cli_pro=productos.id_vendedor 
+INNER JOIN categorias ON productos.categoria=categorias.id_categoria 
+WHERE categoria=id_categoria AND condicion=1;
+
+
+SELECT * FROM mis_compras 
+INNER JOIN productos ON mis_compras.idProducto=productos.id_producto 
+INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE condicion=1

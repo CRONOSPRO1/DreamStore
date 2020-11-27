@@ -131,14 +131,13 @@ $("#perfil").click(function() {
 
 
 //Funcion que despliega la ventana modal de usuarios
-function mostarDetalles_usuario(
-    id_cli_pro, nombre, apellido, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, compras_realizadas, quejas) {
+function mostrarDetalles_usuario(
+    nombre, apellido, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, compras_realizadas, quejas) {
     $('#usuarios').modal('show');
 
 
     var nombre_apellido = nombre + " " + apellido;
 
-    document.getElementById("id_cli_pro").innerHTML = id_cli_pro;
     document.getElementById("nombre_apellido").innerHTML = nombre_apellido;
     document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
     document.getElementById("ciudad").innerHTML = ciudad;
@@ -148,4 +147,36 @@ function mostarDetalles_usuario(
     document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
     document.getElementById("compras_realizadas").innerHTML = compras_realizadas;
     document.getElementById("quejas").innerHTML = quejas;
+}
+
+function mostrarDetalles_productos(
+    id_producto, nombre_producto, cantidad, ciudad, categoria, precio, imagen, id_vendedor, estado, marca, descripcion
+) {
+    $('#productos').modal('show');
+
+    document.getElementById("id_producto").innerHTML = id_producto;
+    document.getElementById("nombre_producto").innerHTML = nombre_producto;
+    document.getElementById("cantidad").innerHTML = cantidad;
+    document.getElementById("ciudad").innerHTML = ciudad;
+    document.getElementById("categoria").innerHTML = categoria;
+    document.getElementById("precio").innerHTML = precio;
+    document.getElementById("imagen").innerHTML = imagen;
+    document.getElementById("id_vendedor").innerHTML = id_vendedor;
+    document.getElementById("estado").innerHTML = estado;
+    document.getElementById("marca").innerHTML = marca;
+    document.getElementById("descripcion").innerHTML = descripcion;
+
+}
+
+function mostrarDetalles_compras(
+    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion
+) {
+    $('#compras').modal('show');
+    document.getElementById("id_compra").innerHTML = id_compra;
+    document.getElementById("fecha_compra").innerHTML = fecha_compra;
+    document.getElementById("nombre_producto").innerHTML = nombre_producto;
+    document.getElementById("precio").innerHTML = precio;
+    document.getElementById("nombre_vendedor").innerHTML = nombre_vendedor;
+    document.getElementById("nombre_comprador").innerHTML = nombre_comprador;
+    document.getElementById("direccion").innerHTML = direccion;
 }

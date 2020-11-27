@@ -12,7 +12,7 @@ class usuario
 
     public function listar_usuarios()
     {
-        $stmt = $this->conexion->conectar()->prepare("SELECT * FROM cli_pro where rol='usuario'");
+        $stmt = $this->conexion->conectar()->prepare("SELECT * FROM cli_pro where rol='usuario' and condicion=1 ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
@@ -105,11 +105,23 @@ class usuario
         $stmt->closeCursor();
     }
 
+    //Mostrar cantidad de usuarios eliminados
     public function usuarios_eliminados(){
         $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE MONTH(fecha_registro) = MONTH(CURRENT_DATE()) AND condicion=0 ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+    
+    //Muestra el nombre de un vendedor
+    public function nombre_vendedor($id_vendedor){
+        $stmt=$this->conexion->conectar()->prepare("SELECT CONCAT(nombre,' ',apellido) AS resultado FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE id_vendedor=:id_vendedor");
+        $stmt->bindParam(":id_vendedor",$id_vendedor,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+
     
 }

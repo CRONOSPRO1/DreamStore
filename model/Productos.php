@@ -9,8 +9,10 @@ class productos{
         $this->conexion=new conexion();
     }
 
+    //Lista los productos pero solo de los usuarios que no se han eliminado 
     public function listar_productos(){
-        $stmt=$this->conexion->conectar()->prepare("SELECT * FROM productos INNER JOIN categorias ON productos.categoria = categorias.id_categoria WHERE categoria=id_categoria");
+        $stmt=$this->conexion->conectar()->prepare("
+        SELECT * FROM cli_pro INNER JOIN productos ON cli_pro.id_cli_pro=productos.id_vendedor INNER JOIN categorias ON productos.categoria=categorias.id_categoria WHERE categoria=id_categoria AND condicion=1");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();

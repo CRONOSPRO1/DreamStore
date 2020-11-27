@@ -17,4 +17,12 @@ class ventas{
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+
+    //Muestra las ventas totales 
+    public function ventas_totales(){
+        $stmt=$this->conexion->conectar()->prepare("SELECT count(*) as resultado FROM mis_compras");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
 }

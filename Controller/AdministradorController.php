@@ -8,6 +8,7 @@ require_once 'model/Ingresos.php';
 require_once 'model/Mis_compras.php';
 require_once 'model/Ventas.php';
 require_once 'model/Quejas.php';
+require_once 'model/categorias.php';
 
 
 class AdministradorController
@@ -17,9 +18,10 @@ class AdministradorController
     public $model_compras;
     public $model_empresa;
     public $model_ingresos;
-    public $model_MisCompras;
+    public $model_miscompras;
     public $model_ventas;
     public $model_quejas;
+    public $model_categorias;
 
 
 
@@ -30,9 +32,10 @@ class AdministradorController
         $this->model_compras = new compras();
         $this->model_empresa = new empresa();
         $this->model_ingresos = new ingresos();
-        $this->model_MisCompras = new mis_compras();
+        $this->model_miscompras = new mis_compras();
         $this->model_ventas = new ventas();
         $this->model_quejas = new quejas();
+        $this->model_categorias = new categorias();
     }
 
     public function index()

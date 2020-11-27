@@ -20,7 +20,7 @@
   <span class="four"><span class="screen-reader-text">4</span></span>
 </section>
 <div class="link-container">
-  <a target="_blank" href="" class="more-link">Ir a Inicio</a>
+  <a target="_blank" href="<?=base_url?>" class="more-link">Ir a Inicio</a>
 </div>
 </body>
 </html>

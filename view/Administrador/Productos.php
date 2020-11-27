@@ -211,23 +211,46 @@
                     <th>Nombre</th>
                     <th>Categoria</th>
                     <th>Vendedor</th>
+                   
                     <th>Ubicacion</th>
                     <th>Vista previa</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($this->model_productos->listar_productos() as $row):?>
-                <tr>
-                    <td><?=$row['id_producto']?></td>
-                    <td><?=$row['nombre_producto']?></td>
-                    <td><?=$row['nombre_categoria']?></td>
-                    <td><?=$row['id_vendedor']?></td>
-                    <td><?=$row['ciudad']?></td>
-                    <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostarDetalles()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
-                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                            </svg></a></td>
-                </tr>
+                <?php foreach ($this->model_productos->listar_productos() as $row) : ?>
+                    <tr>
+                        <td><?= $row['id_producto'] ?></td>
+                        <td><?= $row['nombre_producto'] ?></td>
+                        <td><?= $row['nombre_categoria'] ?></td>
+                        <td><?php foreach ($this->model_usuario->nombre_vendedor($row['id_vendedor']) as $resultado) {
+                                echo $resultado['resultado'];
+                            } ?></td>
+                           
+                        <td><?= $row['ciudad'] ?></td>
+
+                        <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostrarDetalles_productos(
+                        '<?= $row['id_producto'] ?>',
+                        '<?= $row['nombre_producto'] ?>',
+                        '<?= $row['cantidad'] ?>',
+                        '<?= $row['ciudad'] ?>',
+                        '<?php foreach ($this->model_categorias->categoria_producto($row['categoria']) as $resultado) {
+                                echo $resultado['resultado'];
+                            } ?>',
+                        '<?= $row['precio'] ?>',
+                        '<?= $row['imagen'] ?>',
+                        '<?php foreach ($this->model_usuario->nombre_vendedor($row['id_vendedor']) as $resultado) {
+                                echo $resultado['resultado'];
+                            } ?>',
+                        '<?= $row['estado'] ?>',
+                        '<?= $row['marca'] ?>',
+                        '<?=$row['descripcion']?>'
+
+
+                    )"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />
+                                    <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                </svg></a></td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -249,13 +272,13 @@
                         <div id="carouselExampleInterval" class="carousel slide mh-50 " data-ride="carousel">
                             <div class="carousel-inner text-center">
                                 <div class="carousel-item active  " data-interval="10000">
-                                    <img src="../../assets/img/producto1.webp" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <img src="" id="imagen" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
                                 </div>
                                 <div class="carousel-item" data-interval="2000">
-                                    <img src="../../assets/img/producto2.webp" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <img src="" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../assets/img/producto3.jpg" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <img src="" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
                                 </div>
                             </div>
                             <a class="carousel-control-prev bg-dark" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -267,20 +290,62 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                        <h5 class="card-title bg-primary text-white p-1 text-center">Nombre producto</h5>
+                        <h5 class="card-title bg-primary text-white p-1 text-center" id="nombre_producto"></h5>
                         <div class="card-body">
 
                             <h5 class="card-title">Descripcion</h5>
-                            <p class="card-text">Lorem </p>
+                            <p class="card-text" id="descripcion"></p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
 
-
-                                <div class="container text-center">
+                                <div class="container text-center mt-2">
                                     <div class="row">
 
                                         <div class="col-sm w-100 mr-2 text-justify border ">
+                                            <table>
+                                                <tr>
+                                                    <td rowspan="2" class="pr-3">
+                                                        <span>
+                                                            <svg width="2.2em" height="2.2em" viewBox="0 0 16 16" class="bi bi-bag" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z" />
+                                                            </svg> </span>
+                                                    </td>
+                                                    <td><strong>Id producto</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="id_producto"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                        <div class="col-sm w-100 ml-2 text-justify border ">
+                                            <table class="">
+                                                <tr>
+                                                    <td rowspan="2" class="pr-3 ">
+                                                        <span>
+                                                            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-layout-text-sidebar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                                                <path fill-rule="evenodd" d="M11 15V1h1v14h-1zM3 3.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                                            </svg>
+                                                        </span>
+                                                    </td>
+                                                    <td><strong>Categoria</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="categoria">fgfg</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="container text-center mt-2">
+                                    <div class="row">
+
+                                        <div class="col-sm w-100 mr-2 text-justify border ">
+
                                             <table>
                                                 <tr>
                                                     <td rowspan="2" class="pr-3">
@@ -294,7 +359,7 @@
                                                     <td><strong>Precio</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-success">22.000</td>
+                                                    <td class="text-success" id="precio"></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -313,13 +378,25 @@
                                                     <td><strong>Estado</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-danger">Agotado</td>
+                                                    <td class="text-danger" id="estado"></td>
                                                 </tr>
                                             </table>
                                         </div>
 
                                     </div>
                                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
                                 <div class="container text-center mt-2">
                                     <div class="row">
 
@@ -338,7 +415,7 @@
                                                     <td><strong>Cantidad</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>10</td>
+                                                    <td id="cantidad"></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -357,13 +434,17 @@
                                                     <td><strong>Ciudad</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Bogota</td>
+                                                    <td id="ciudad"></td>
                                                 </tr>
                                             </table>
                                         </div>
 
                                     </div>
                                 </div>
+
+
+
+
                                 <div class="container text-center mt-2">
                                     <div class="row">
 
@@ -381,7 +462,7 @@
                                                     <td><strong>Nombre vendedor</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Carlos Betancur</td>
+                                                    <td id="id_vendedor"></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -400,62 +481,60 @@
                                                     <td><strong>Marca</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Xiaomi</td>
+                                                    <td id="marca"></td>
                                                 </tr>
                                             </table>
                                         </div>
 
                                     </div>
+
                                 </div>
+
                             </li>
-                        </ul>       
+                        </ul>
                     </div>
 
                     <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
                                     <button class="btn bg-dark btn-block p-0 m-0 " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <span class="h5 text-white">Acciones</span>
-                                            <span class="text-white">
-                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
+                                        <span class="text-white">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </h2>
                             </div>
 
-
-
+                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
                         </div>
 
-               
-
-            </div>
 
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </main>
 </div>
 </div>
-<script>
-    function mostarDetalles() {
-        $('#productos').modal('show');
-    }
-</script>
+
 
 
 <?php require_once 'view/layout/footer.php'; ?>
