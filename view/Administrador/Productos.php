@@ -84,63 +84,38 @@
     <br>
 
 
-    <div class="container-sm w-75">
-        <div class="float-left ">
-            <table class="table table-sm table-borderless w-100  bg-white shadow">
-                <tr>
-                    <td rowspan="2" class="align-middle w-25  bg-danger  text-white">
-                        <span class="btn bg-danger text-white w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-cart-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                <path fill-rule="evenodd" d="M6 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </span>
-                    </td>
-                    <td colspan="2"><span class="h6">Productos eliminado</span></td>
-                </tr>
-                <tr class=" border-top  w-75">
-                    <td class="w-25">
-                        <span class="text-danger text-left w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z" />
-                            </svg>
-                        </span>
-                    </td>
-                    <td class="w-75"><span class="h5  text-danger ">24</span> </td>
-                </tr>
+    <div class="container-sm w-25 ">
 
-            </table>
-        </div>
-        <div class="float-right ">
-            <table class="table table-sm table-borderless w-100  bg-white shadow">
-                <tr>
-                    <td rowspan="2" class="align-middle w-25  bg-success  text-white">
-                        <span class="btn bg-success text-white w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                                <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
-                            </svg>
+        <table class="table table-sm table-borderless w-100  bg-white shadow">
+            <tr>
+                <td rowspan="2" class="align-middle w-25  bg-success  text-white">
+                    <span class="btn bg-success text-white w-100 ">
+                        <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
+                        </svg>
 
-                        </span>
-                    </td>
-                    <td colspan="2"><span class="h6">Productos agregados</span></td>
-                </tr>
-                <tr class=" border-top  w-75">
-                    <td class="w-25">
-                        <span class="text-success text-left w-100 ">
-                            <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
-                            </svg>
-                        </span>
-                    </td>
-                    <td class="w-75"><span class="h5  text-success ">24</span> </td>
-                </tr>
+                    </span>
+                </td>
+                <td colspan="2"><span class="h6">Productos agregados </span></td>
+            </tr>
+            <tr class=" border-top  w-75">
+                <td class="w-25">
+                    <span class="text-success text-left w-100 ">
+                        <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+                        </svg>
+                    </span>
+                </td>
+                <td class="w-75"><span class="h5  text-success">
+                <?php foreach ($this->model_productos->productos_agregados() as $resultado) {
+                                echo $resultado['resultado'];
+                            }  ?>
+                </span></td>
+            </tr>
 
-            </table>
-        </div>
-
+        </table>
     </div>
 
 
@@ -211,7 +186,6 @@
                     <th>Nombre</th>
                     <th>Categoria</th>
                     <th>Vendedor</th>
-                   
                     <th>Ubicacion</th>
                     <th>Vista previa</th>
                 </tr>
@@ -225,7 +199,7 @@
                         <td><?php foreach ($this->model_usuario->nombre_vendedor($row['id_vendedor']) as $resultado) {
                                 echo $resultado['resultado'];
                             } ?></td>
-                           
+
                         <td><?= $row['ciudad'] ?></td>
 
                         <td><a class="btn btn-primary " href="javascript:void(0)" onclick="mostrarDetalles_productos(
@@ -237,13 +211,16 @@
                                 echo $resultado['resultado'];
                             } ?>',
                         '<?= $row['precio'] ?>',
-                        '<?= $row['imagen'] ?>',
                         '<?php foreach ($this->model_usuario->nombre_vendedor($row['id_vendedor']) as $resultado) {
                                 echo $resultado['resultado'];
                             } ?>',
                         '<?= $row['estado'] ?>',
                         '<?= $row['marca'] ?>',
-                        '<?=$row['descripcion']?>'
+                        '<?= $row['descripcion'] ?>',
+                        '<?= base_url . $row['imagen1'] ?>',
+                        '<?= base_url . $row['imagen2'] ?>',
+                        '<?= base_url . $row['imagen3'] ?>'
+
 
 
                     )"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -272,22 +249,22 @@
                         <div id="carouselExampleInterval" class="carousel slide mh-50 " data-ride="carousel">
                             <div class="carousel-inner text-center">
                                 <div class="carousel-item active  " data-interval="10000">
-                                    <img src="" id="imagen" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <span id="imagen1"></span>
                                 </div>
                                 <div class="carousel-item" data-interval="2000">
-                                    <img src="" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <span id="imagen2"></span>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="" style="max-height:19rem;min-width:70%" class="d-block  " alt="...">
+                                    <span id="imagen3"></span>
                                 </div>
                             </div>
                             <a class="carousel-control-prev bg-dark" href="#carouselExampleInterval" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon " aria-hidden="true"></span>
-                                <span class="sr-only ">Previous</span>
+                                <span class="sr-only ">Anterior</span>
                             </a>
                             <a class="carousel-control-next bg-dark" href="#carouselExampleInterval" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                                <span class="sr-only">Siguiente</span>
                             </a>
                         </div>
                         <h5 class="card-title bg-primary text-white p-1 text-center" id="nombre_producto"></h5>

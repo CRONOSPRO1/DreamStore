@@ -33,6 +33,14 @@ class productos{
         $stmt->execute();
         $stmt->closeCursor();
     }
+
+    public function productos_agregados(){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) as resultado  FROM productos 
+        INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE MONTH(fecha) = MONTH(CURRENT_DATE()) and condicion=1");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
 }
 
 

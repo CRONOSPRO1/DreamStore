@@ -24,7 +24,6 @@
                 'Octubre',
                 'Noviembre',
                 'Diciembre'
-
             ],
             datasets: [{
                 data: [
@@ -150,9 +149,18 @@ function mostrarDetalles_usuario(
 }
 
 function mostrarDetalles_productos(
-    id_producto, nombre_producto, cantidad, ciudad, categoria, precio, imagen, id_vendedor, estado, marca, descripcion
+    id_producto, nombre_producto, cantidad, ciudad, categoria,
+    precio, id_vendedor, estado, marca, descripcion, imagen1, imagen2, imagen3
 ) {
     $('#productos').modal('show');
+
+    var input = " <img ";
+    var input2 = " style='max-height:19rem;min-width:70%' class='d-block' alt='Imagen no encontrada'>";
+    var imagen1 = input + "src='" + imagen1 + "'" + input2;
+    var imagen2 = input + "src='" + imagen2 + "'" + input2;
+    var imagen3 = input + "src='" + imagen3 + "'" + input2;
+
+
 
     document.getElementById("id_producto").innerHTML = id_producto;
     document.getElementById("nombre_producto").innerHTML = nombre_producto;
@@ -160,18 +168,28 @@ function mostrarDetalles_productos(
     document.getElementById("ciudad").innerHTML = ciudad;
     document.getElementById("categoria").innerHTML = categoria;
     document.getElementById("precio").innerHTML = precio;
-    document.getElementById("imagen").innerHTML = imagen;
     document.getElementById("id_vendedor").innerHTML = id_vendedor;
     document.getElementById("estado").innerHTML = estado;
     document.getElementById("marca").innerHTML = marca;
     document.getElementById("descripcion").innerHTML = descripcion;
+    document.getElementById("imagen1").innerHTML = imagen1;
+    document.getElementById("imagen2").innerHTML = imagen2;
+    document.getElementById("imagen3").innerHTML = imagen3;
+
+
+
 
 }
 
 function mostrarDetalles_compras(
-    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion
+    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion, imagen
 ) {
     $('#compras').modal('show');
+
+    var input = " <img ";
+    var input2 = " width='30em' height='30em' alt='Imagen no encontrada'>";
+    var imagen = input + "src='" + imagen + "'" + input2;
+
     document.getElementById("id_compra").innerHTML = id_compra;
     document.getElementById("fecha_compra").innerHTML = fecha_compra;
     document.getElementById("nombre_producto").innerHTML = nombre_producto;
@@ -179,4 +197,5 @@ function mostrarDetalles_compras(
     document.getElementById("nombre_vendedor").innerHTML = nombre_vendedor;
     document.getElementById("nombre_comprador").innerHTML = nombre_comprador;
     document.getElementById("direccion").innerHTML = direccion;
+    document.getElementById("imagen").innerHTML = imagen;
 }
