@@ -1,6 +1,6 @@
 
 <?php
-define("base_url","http://localhost/dreamstore/");
+define("base_url","http://localhost/Dreamstore/");
 //Url para el administrador
 define("url_Administrador","http://localhost/DreamStore/Administrador/");
 

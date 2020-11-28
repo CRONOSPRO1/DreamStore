@@ -1,17 +1,18 @@
 <?php
-require_once 'config/parameters.php';
-require_once 'model/usuario.php';
-require_once 'model/Productos.php';
-require_once 'model/Compras.php';
-require_once 'model/Empresa.php';
-require_once 'model/Ingresos.php';
-require_once 'model/Mis_compras.php';
-require_once 'model/Ventas.php';
-require_once 'model/Quejas.php';
-require_once 'model/categorias.php';
+require_once('config/parameters.php');
+require_once('model/usuario.php');
+require_once('model/Productos.php');
+require_once('model/Compras.php');
+require_once('model/Empresa.php');
+require_once('model/Ingresos.php');
+require_once('model/Mis_compras.php');
+require_once('model/Ventas.php');
+require_once('model/Quejas.php');
+require_once('model/categorias.php');
+require_once('assets/fpdf/fpdf.php');
 
 
-class AdministradorController
+class AdministradorController extends FPDF
 {
     public $model_usuario;
     public $model_productos;
@@ -22,6 +23,7 @@ class AdministradorController
     public $model_ventas;
     public $model_quejas;
     public $model_categorias;
+    public $datos;
 
 
 
@@ -77,5 +79,62 @@ class AdministradorController
     public function Quejas()
     {
         require_once 'view/Administrador/Quejas.php';
+    }
+
+
+    public function recibo()
+    {
+        $id=$_POST['id'];
+        $id_comprador=$_POST['id_comprador'];
+        foreach ($this->model_usuario->datos_usuario($id_comprador) as $row) {
+            $this->datos['nombre_comprador']=$row['nombre'].''.$row['apellido'];
+            $this->datos['telefono_comprador']=$row['telefono'];
+        }
+        $pdf = new PDF();
+        $pdf->AliasNbPages();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', '', 14);
+
+       foreach ($this->model_compras->listar_compras($id) as $row) {
+
+
+        $pdf->Cell(50, 14,'Producto: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['nombre_producto'], 1, 1,'L',0);
+        $this->Ln(10);
+        $pdf->Cell(50, 14,'Marca:', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['marca'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'ID  compra:', 1, 0,'L',0); 
+        $pdf->Cell(65, 14,$row['id_compra'], 1, 1,'L',0); 
+        
+        $pdf->Cell(50, 14,'Fecha Compra: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['fecha_venta'], 1, 1,'L',0);
+        
+        $pdf->Cell(50, 14,'Precio: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,'$'.$row['precio'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Ciudad: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['ciudad'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Nombre vendedor: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['nombre'].' '.$row['apellido'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Telefono vendedor: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['telefono'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Email vendedor: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$row['email'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Nombre comprador: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$this->datos['nombre_comprador'], 1, 1,'L',0);
+
+        $pdf->Cell(50, 14,'Telefono comprador: ', 1, 0,'L',0);
+        $pdf->Cell(65, 14,$this->datos['telefono_comprador'], 1, 1,'L',0);
+
+        $pdf->Image($row['imagen1'],135,100,75);
+        
+       } 
+
+        $pdf->Output();
     }
 }

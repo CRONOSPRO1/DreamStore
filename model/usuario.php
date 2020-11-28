@@ -122,6 +122,14 @@ class usuario
         $stmt->closeCursor();
     }
 
+    public function datos_usuario($id_vendedor){
+        $stmt=$this->conexion->conectar()->prepare("SELECT * FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE id_vendedor=:id_vendedor");
+        $stmt->bindParam(":id_vendedor",$id_vendedor,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
 
     
 }

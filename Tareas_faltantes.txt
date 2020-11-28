@@ -5,7 +5,6 @@ Vista view/administrador/usuarios.php linea 318+
 Para  pasar el id por parametro puedo hacer un foreach antes de cargar el modal
 
 
--Imagenes ->Moviendolas
+
 -Graficos ->Chartjs
 -Busqueda ->Ajax
--Reportes ->Fpdf

@@ -179,10 +179,11 @@ function mostrarDetalles_productos(
 
 
 
+
 }
 
 function mostrarDetalles_compras(
-    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion, imagen
+    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion, imagen, compra, id_comprador
 ) {
     $('#compras').modal('show');
 
@@ -198,4 +199,7 @@ function mostrarDetalles_compras(
     document.getElementById("nombre_comprador").innerHTML = nombre_comprador;
     document.getElementById("direccion").innerHTML = direccion;
     document.getElementById("imagen").innerHTML = imagen;
+    document.getElementById("compra").value = compra;
+    document.getElementById("id_comprador").value = id_comprador;
+
 }
