@@ -162,8 +162,8 @@ function responder_queja(nombre, queja, id_queja) {
     document.getElementById("id_queja").value = id_queja;
 }
 
-function confirmacion() {
-    $('#confirmacion').modal('show');
+function confirmar() {
+    $('#confirmar').modal('show');
 }
 
 function queja_respondida(queja_respuesta, respuesta) {
@@ -192,7 +192,7 @@ function mostrarDetalles_usuario(
     document.getElementById("quejas").innerHTML = quejas;
 }
 
-function mostrarDetalles_empresa() {
+function mostrarDetalles_empresa(nombre, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos) {
     $('#empresas').modal('show');
 
 

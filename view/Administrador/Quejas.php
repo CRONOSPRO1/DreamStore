@@ -83,7 +83,7 @@
                             </a>
                         <?php endif; ?>
                         <?php if ($row['estado'] == 0) : ?>
-                            <a class="btn" href="javascript:void(0)" onclick="responder_queja('<?=$row['nombre']?>','<?= $row['queja'] ?>','<?= $row['id_queja'] ?>')" data-toggle="tooltip" data-placement="top" title="Responder">
+                            <a class="btn" href="javascript:void(0)" onclick="responder_queja('<?=$row['nombre']?>','<?= utf8_decode($row['queja'])?>','<?= $row['id_queja'] ?>')" data-toggle="tooltip" data-placement="top" title="Responder">
                                 <span class="text-dark">
                                     <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
@@ -93,7 +93,7 @@
                         <?php endif; ?>
 
                         <!--Eliminar-->
-                        <a class="btn " data-toggle="tooltip" data-placement="top" title="Eliminar" href="<?=base_url?>Administrador/EliminarQueja&id=<?=$row['id_queja']?>" >
+                        <a class="btn " data-toggle="tooltip" data-placement="top" title="Eliminar"  href="javascript:void(0)" onclick="confirmar()">
                             <span class="text-danger">
                                 <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
@@ -134,7 +134,7 @@
                     <hr>
                     <h6>Responder:</h6>
                    
-                        <textarea name="respuesta" class="p-2" id="" placeholder="Escriba aqui su respuesta" cols="71,9" rows="10" required=""></textarea>
+                        <textarea name="respuesta" class="p-2" id="" placeholder="Escriba aqui su respuesta" cols="71,9" rows="4"  required=""></textarea>
                         <input type="hidden" name="id_queja" id="id_queja">
                         <input class="btn btn-info form-control" value="Responder" type="submit">
                     </form>
@@ -197,29 +197,25 @@
     </div>
 
 
-<!--Respuesta enviada-->
-    <div class="modal" id="confirmacion" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Su respuesta a sido enviada
-                        <span class="text-success">
-                            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-check2-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                                <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
-                            </svg>
-                        </span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
+<!--Confirmar para eliminar una queja-->
+<div class="modal fade" id="confirmar"  tabindex="-1" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Seguro que desea eliminar esta queja</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+      <a class="btn btn-danger"  href="<?=base_url?>Administrador/EliminarQueja&id=<?=$row['id_queja']?>">Eliminar</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+        
+      </div>
     </div>
+  </div>
+</div>
 
 
 

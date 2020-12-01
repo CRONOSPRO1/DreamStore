@@ -61,7 +61,7 @@
             <tr class=" border-top   text-center">
 
                 <td class="w-75"><span class="h5  text-success ">
-                        <?php foreach ($this->model_miscompras->compras_totales() as $row) {
+                        <?php foreach ($this->model_empresa->empresas_registradas() as $row) {
                             echo $row['resultado'];
                         } ?></span> </td>
             </tr>
@@ -126,13 +126,8 @@
                             } ?>',
                         '<?php foreach ($this->model_ventas->ventas_usuario($row['id_cli_pro']) as $resultado) {
                                 echo $resultado['resultado'];
-                            } ?>',
-                        '<?php foreach ($this->model_miscompras->compras_usuario($row['id_cli_pro']) as $resultado) {
-                                echo $resultado['resultado'];
-                            } ?>',
-                        ' <?php foreach ($this->model_quejas->queja_cliente($row['id_cli_pro']) as $resultado) {
-                                echo $resultado['resultado'];
                             } ?>'
+                    
                         )">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z" />

@@ -130,7 +130,6 @@ class AdministradorController extends FPDF
         $this->datos['id_queja']=$_POST['id_queja'];
         $this->datos['respuesta']=$_POST['respuesta'];
         $this->model_quejas->responder_queja($this->datos);
-        echo 'href="javascript:void(0)" onclick="confirmacion';
         header('location:'.base_url.'Administrador/Quejas');
     }
 

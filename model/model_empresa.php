@@ -20,7 +20,7 @@ class empresa
     }
 
     //Para contar las empresas registradas
-    public function usuarios_registrados()
+    public function empresas_registradas()
     {
         $stmt = $this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE condicion=1 and rol='empresa' ");
         $stmt->execute();

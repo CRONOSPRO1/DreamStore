@@ -3,6 +3,9 @@ $host = $_SERVER["HTTP_HOST"];
 $url = $_SERVER["REQUEST_URI"];
 $direccion = "http://" . $host . $url;
 ?>
+<?php
+    header('Content-Type: text/html; charset=ISO-8859-1');
+?>
 <!doctype html>
 <html lang="en">
 
