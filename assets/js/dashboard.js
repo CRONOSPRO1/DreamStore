@@ -1,6 +1,9 @@
 /* globals Chart:false, feather:false */
 
 (function() {
+
+
+
     'use strict'
 
     feather.replace()
@@ -26,26 +29,51 @@
                 'Diciembre'
             ],
             datasets: [{
-                data: [
-                    3,
-                    5,
-                    8,
-                    3,
-                    49,
-                    22,
-                    34,
-                    11,
-                    33,
-                    23,
-                    2,
-                    1
-                ],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#0050fd',
-                borderWidth: 4,
-                pointBackgroundColor: '#0050fd'
-            }]
+                    data: [
+                        12,
+                        57,
+                        81,
+                        302,
+                        49,
+                        22,
+                        34,
+                        11,
+                        33,
+                        23,
+                        221,
+                        111
+                    ],
+                    label: "Usuarios eliminados",
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#0050fd',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#0050fd'
+                }, {
+                    data: [
+                        222,
+                        111,
+                        812,
+                        322,
+                        492,
+                        223,
+                        412,
+                        111,
+                        331,
+                        231,
+                        223,
+                        1232
+                    ],
+                    label: "Usuarios registrados",
+                    lineTension: 0,
+                    backgroundColor: 'rgba(252,72,7,0.84)',
+                    borderColor: '#0050fd',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#0050fd'
+
+                }
+
+            ]
         },
         options: {
             scales: {
@@ -127,6 +155,22 @@ $("#perfil").click(function() {
         $("#span-margen").removeClass("mr-4").addClass("mr-3")
     }
 });*/
+function responder_queja(nombre, queja, id_queja) {
+    $('#responder_queja').modal('show');
+    document.getElementById("nombre").innerHTML = nombre;
+    document.getElementById("queja").innerHTML = queja;
+    document.getElementById("id_queja").value = id_queja;
+}
+
+function confirmacion() {
+    $('#confirmacion').modal('show');
+}
+
+function queja_respondida(queja_respuesta, respuesta) {
+    $('#queja_respondida').modal('show');
+    document.getElementById("queja_respuesta").innerHTML = queja_respuesta;
+    document.getElementById("respuesta").innerHTML = respuesta;
+}
 
 
 //Funcion que despliega la ventana modal de usuarios
@@ -146,6 +190,21 @@ function mostrarDetalles_usuario(
     document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
     document.getElementById("compras_realizadas").innerHTML = compras_realizadas;
     document.getElementById("quejas").innerHTML = quejas;
+}
+
+function mostrarDetalles_empresa() {
+    $('#empresas').modal('show');
+
+
+    document.getElementById("nombre").innerHTML = nombre;
+    document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
+    document.getElementById("ciudad").innerHTML = ciudad;
+    document.getElementById("email").innerHTML = email;
+    document.getElementById("telefono").innerHTML = telefono;
+    document.getElementById("productos_publicados").innerHTML = productos_publicados;
+    document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
+
+
 }
 
 function mostrarDetalles_productos(

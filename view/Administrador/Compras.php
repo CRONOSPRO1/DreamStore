@@ -43,7 +43,7 @@
                         </svg>
                     </span>
                 </td>
-                <td><span class="h6">Compras realizadas este mes</span></td>
+                <td><span class="h6">Compras realizadas </span></td>
             </tr>
             <tr class=" border-top   text-center">
 
@@ -63,7 +63,7 @@
 
 
 
-    <canvas class="my-4 w-100" id="myChart" width="300" height="115"></canvas>
+    <canvas class="my-4 w-100" id="GraficoCompras" width="300" height="115"></canvas>
 
     <hr>
 

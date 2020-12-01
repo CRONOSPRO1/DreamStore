@@ -58,7 +58,6 @@
 
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -67,17 +66,7 @@
 <script src="<?=base_url?>assets/js/dashboard.js"></script>
 <script src="<?=base_url?>assets/js/particles.js"></script>
 <script src="<?=base_url?>assets/js/app.js"></script>
-
-<script>
-  $(function() {
-    $('.example-popover').popover({
-      container: 'body'
-    })
-  })
-  $(function() {
-    $('[data-toggle="popover"]').popover()
-  })
-</script>
+<?php require_once("view/layout/Graficos.php") ?>
 </body>
 
-</html>
+</html

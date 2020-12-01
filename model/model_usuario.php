@@ -4,10 +4,12 @@ class usuario
 {
 
     public $conexion;
+    private $año;
 
     public function __construct()
     {
         $this->conexion = new conexion();
+        $this->año = date('Y');
     }
 
     public function listar_usuarios()
@@ -97,9 +99,9 @@ class usuario
         $stmt->closeCursor();
     }
 
-    //Para contar los usuarios nuevos mensualmente
-    public function usuarios_nuevos(){
-        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE MONTH(fecha_registro) = MONTH(CURRENT_DATE())");
+    //Para contar los usuarios registrados
+    public function usuarios_registrados(){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE condicion=1 AND rol='usuario'");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
@@ -107,7 +109,7 @@ class usuario
 
     //Mostrar cantidad de usuarios eliminados
     public function usuarios_eliminados(){
-        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE MONTH(fecha_registro) = MONTH(CURRENT_DATE()) AND condicion=0 ");
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM cli_pro WHERE  condicion=0 AND rol='usuario' ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
@@ -115,7 +117,7 @@ class usuario
     
     //Muestra el nombre de un vendedor
     public function nombre_vendedor($id_vendedor){
-        $stmt=$this->conexion->conectar()->prepare("SELECT CONCAT(nombre,' ',apellido) AS resultado FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE id_vendedor=:id_vendedor");
+        $stmt=$this->conexion->conectar()->prepare("SELECT CONCAT(nombre,'   ',apellido) AS resultado FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE id_vendedor=:id_vendedor");
         $stmt->bindParam(":id_vendedor",$id_vendedor,PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -125,6 +127,22 @@ class usuario
     public function datos_usuario($id_vendedor){
         $stmt=$this->conexion->conectar()->prepare("SELECT * FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE id_vendedor=:id_vendedor");
         $stmt->bindParam(":id_vendedor",$id_vendedor,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+    public function usuarios_nuevos_año($mes){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS cantidad FROM cli_pro WHERE YEAR(fecha_registro)=$this->año  AND MONTH(fecha_registro)=:mes AND rol='usuario' ");
+        $stmt->bindParam(":mes",$mes,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+    public function usuarios_eliminados_año($mes){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) AS cantidad FROM cli_pro WHERE YEAR(fecha_registro)=$this->año  AND MONTH(fecha_registro)=:mes AND condicion=0 AND rol='usuario'");
+        $stmt->bindParam(":mes",$mes,PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();

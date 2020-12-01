@@ -158,7 +158,7 @@
 
 
     <!---  -->
-    <canvas class="my-4 w-100" id="myChart" width="300" height="115"></canvas>
+    <canvas class="my-4 w-100" id="GraficoProductos" width="300" height="115"></canvas>
 
     <hr>
     <div class="container-md w-25">
@@ -362,17 +362,6 @@
 
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
 
                                 <div class="container text-center mt-2">
                                     <div class="row">

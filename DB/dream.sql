@@ -137,3 +137,7 @@ WHERE categoria=id_categoria AND condicion=1;
 SELECT * FROM mis_compras 
 INNER JOIN productos ON mis_compras.idProducto=productos.id_producto 
 INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE condicion=1
+
+
+/*Consulta para graficas*/
+SELECT * FROM productos WHERE month(fecha)=11 and year(fecha)=2020

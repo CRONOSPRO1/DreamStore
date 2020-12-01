@@ -3,10 +3,12 @@ require_once 'model/conexion.php';
 class productos{
 
     public $conexion;
+    private $año;
 
     public function __construct()
     {
         $this->conexion=new conexion();
+        $this->año = date('Y');
     }
 
     //Lista los productos pero solo de los usuarios que no se han eliminado 
@@ -41,6 +43,18 @@ class productos{
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+
+    //Consulta para la grafica
+    public function productos_nuevos_año($mes){
+        $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) as cantidad FROM productos WHERE YEAR(fecha)=$this->año AND MONTH(fecha)=:mes");
+        $stmt->bindParam(":mes",$mes,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+
+    
 }
 
 

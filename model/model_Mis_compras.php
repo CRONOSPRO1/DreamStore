@@ -3,9 +3,13 @@ require_once 'conexion.php';
 class mis_compras
 {
 
+    public $conexion;
+    private $año;
+
     public function __construct()
     {
         $this->conexion = new conexion();
+        $this->año = date('Y');
     }
 
     //Metodo para mostrar cuantas compras ha hecho un usuario
@@ -22,7 +26,7 @@ class mis_compras
     /*Muestra la cantidad de compras realizadas*/
     public function Compras_totales()
     {
-        $stmt = $this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM mis_compras WHERE MONTH(fecha_venta) = MONTH(CURRENT_DATE())");
+        $stmt = $this->conexion->conectar()->prepare("SELECT COUNT(*) AS resultado FROM mis_compras ");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
@@ -38,5 +42,16 @@ class mis_compras
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+
+    //Datos para mostrar en la grafica
+    public function compras_año($mes){
+        $stmt = $this->conexion->conectar()->prepare("SELECT COUNT(*) as cantidad FROM mis_compras WHERE YEAR(fecha_venta)=$this->año AND MONTH(fecha_venta)=:mes");
+        $stmt->bindParam(":mes", $mes, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
+    
 
 }
