@@ -53,6 +53,14 @@ class productos{
         $stmt->closeCursor();
     }
 
+    //Mostrar productos publicados por un usuario o empresa
+    public function productos_usuario_mostrar($id_usuario){
+        $stmt=$this->conexion->conectar()->prepare("SELECT * FROM productos INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro where id_vendedor=:id_usuario");
+        $stmt->bindParam(":id_usuario",$id_usuario,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
 
     
 }

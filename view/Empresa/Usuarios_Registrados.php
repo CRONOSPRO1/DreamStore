@@ -1,7 +1,7 @@
-<?php require_once'../layout/Empresa.php'; ?>
+<?php require_once'view/layout/Empresa.php'; ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Usuarios Registrados</h4>
+        <h4 class="h4">Usuarios Registrados</h4>
         <div class="btn-toolbar mb-2 mb-md-0">
 
         </div>
@@ -9,7 +9,6 @@
 
    
     <div class="col-xs-12">
-		<h4>Usuarios</h4>
 		<div>
         <a href="Editar_Usuarios.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar cliente</a>
 		</div>
@@ -31,8 +30,8 @@
 					<td><?php echo '3123453454' ?></td>
 					<td><?php echo 'Cr 23 # 12' ?></td>
 					<td><?php echo 'manu.diaz@gmail.com' ?></td>
-					<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-					<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+					<td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+					<td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                     
                 </tr>
                 
@@ -42,8 +41,8 @@
 					<td><?php echo '3132456578' ?></td>
 					<td><?php echo 'Cr 43 # 12 A' ?></td>
 					<td><?php echo 'Camilap@gmail.com' ?></td>
-					<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-					<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+					<td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+					<td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
                 
                 
@@ -55,8 +54,8 @@
                     <td><?php echo '3224325654' ?></td>
                     <td><?php echo 'Cr 15 # 34 C' ?></td>
                     <td><?php echo 'sara12@gmail.com' ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-                    <td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+                    <td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+                    <td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
             
             
@@ -68,8 +67,8 @@
                     <td><?php echo '3124235467' ?></td>
                     <td><?php echo 'Cr 8 # 12 A' ?></td>
                     <td><?php echo 'Camilo1234@gmail.com' ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-                    <td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+                    <td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+                    <td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
             
             
@@ -93,7 +92,7 @@
                     <div class="card w-100">
                         <div class="card-header text-center" id="fondo_usuario">
 
-                            <img src="../../assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
+                            <img src="<?=base_url?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
                         </div>
                         <h5 class="card-title bg-dark text-white p-1 text-center">Juan Arevalo</h5>
 
@@ -334,4 +333,4 @@
 
 
 
-    <?php require_once '../layout/footer.php'; ?>
+    <?php require_once 'view/layout/footer.php'; ?>

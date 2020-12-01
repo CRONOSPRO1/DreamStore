@@ -1,13 +1,12 @@
-<?php require_once'../layout/Empresa.php'; ?>
+<?php require_once'view/layout/Empresa.php'; ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Agenda_Empresas</h4>
+        <h4 class="h4">Agendar  Empresas</h4>
 
     </div>
 
 
     <div class="col-xs-12">
-		<h4>Agenda</h4>
 		<div>
         <a href="Editar_Proveedores.php" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Proveedor</a>
 		</div>
@@ -79,4 +78,4 @@
 
     
 
-    <?php require_once '../layout/footer.php'; ?>
+    <?php require_once 'view/layout/footer.php'; ?>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../assets/css/menu.css" type="text/css">
+  <link rel="stylesheet" href="<?=base_url?>assets/css/menu.css" type="text/css">
   <title>DREAM STORE</title>
 </head>
 
@@ -123,13 +123,13 @@
         <div id="carouselExampleSlidesOnly " class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../../assets/img/nnn.jpg" class="d-block w-10" alt="...">
+              <img src="<?=base_url?>assets/img/nnn.jpg" class="d-block w-10" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../../assets/img/nnn.jpg" class="d-block w-10" alt="...">
+              <img src="<?=base_url?>assets/img/nnn.jpg" class="d-block w-10" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../../assets/img/nnn.jpg" class="d-block w-10 " alt="...">
+              <img src="<?=base_url?>assets/img/nnn.jpg" class="d-block w-10 " alt="...">
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@
           </div>
           <div class="col px-md-6">
             <div class="p-5 border bg-light">
-              <h6 class="text-center">XIAOMI REDMI NOTE 9 PRO</h6><img src="../../assets/img/nnn.jpg" alt="..." class="img-thumbnail">
+              <h6 class="text-center">XIAOMI REDMI NOTE 9 PRO</h6><img src="<?=base_url?>assets/img/nnn.jpg" alt="..." class="img-thumbnail">
             </div>
           </div>
           <div class="col px-md-6">

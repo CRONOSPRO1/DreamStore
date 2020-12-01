@@ -55,44 +55,7 @@ $direccion = "http://" . $host . $url;
         <ul class="navbar-nav navbar-expand-lg px-5  text-right ">
 
 
-            <div class="mr-auto p-3 text-center">
-                <span class="mr-4" id="span-margen"></span>
-                <a href="#ventanas" class="text-right" id="notificacionesclick">
-                    <span class="text-warning">
-                        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bell " fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
-                            <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
-                        </svg>
-                    </span>
-
-                </a>
-
-                <div class="card ventana-notificaciones mt-3" id="ventanaNotificaciones" style="display: none;">
-                    <div id="contentnoti" class="shadow">
-                        <li class="list-group-item text-dark text-left border-0" style="font-weight:600;">
-                            <h6 class="mb-0">Notificaciones</h6>
-                        </li>
-
-                        <li class="list-group-item text-left py-0" style="border:none;width:100%;font-size:14px;">
-                            <div>
-                                <div class="d-flex flex-row">
-                                    <div class="pl-3" title="Autor">
-                                    </div>
-                                    <div style="max-width:100%;">
-
-                                        <a class="a-notificaciones p-0 text-dark mt-0" href="#">Quedán menos de 10 cantidades para los martillos</a>
-                                        <p class="text-muted notificaciones-descri">Descripción</p>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-
-            </div>
+           
 
 
 
@@ -170,7 +133,7 @@ $direccion = "http://" . $host . $url;
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/ventas.php") {
                                                     echo "active";
                                                 } ?>" href="<?=url_Administrador?>Ventas">
@@ -182,7 +145,7 @@ $direccion = "http://" . $host . $url;
                                     </svg>
                                 </span> Ventas
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link <?php if ($direccion == "http://localhost/DreamStore/View/Administrador/Compras.php") {
                                                     echo "active";
@@ -218,15 +181,15 @@ $direccion = "http://" . $host . $url;
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link " href="../administrador/quejas.php">
+                        <!--<li class="nav-item">
+                            <a class="nav-link " href="view/administrador/quejas.php">
                                 <span>
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z" />
                                     </svg>
                                 </span> Sugerencias
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link " href="<?=url_Administrador?>Quejas">
                                 <span>
@@ -238,29 +201,6 @@ $direccion = "http://" . $host . $url;
                         </li>
                     </ul>
 
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Generar reportes</span>
-                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                            <span data-feather="plus-circle"></span>
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Este mes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Mes Anterior
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span> Todo el año
-                            </a>
-                        </li>
-                        </li>
-                    </ul>
+                    
                 </div>
             </nav>
