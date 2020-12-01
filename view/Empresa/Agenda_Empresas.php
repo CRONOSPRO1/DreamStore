@@ -29,8 +29,8 @@
 					<td><?php echo '3123253454' ?></td>
 					<td><?php echo 'Cr 34 # 12' ?></td>
 					<td><?php echo 'carlos@gmail.com' ?></td>
-					<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $id?>"><i class="fa fa-edit"></i></a></td>
-					<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $id?>"><i class="fa fa-trash"></i></a></td>
+					<td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+					<td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                     
                 </tr>
                 
@@ -40,8 +40,8 @@
 					<td><?php echo '3131435578' ?></td>
 					<td><?php echo 'Cr 12 # 45 A' ?></td>
 					<td><?php echo 'samantan@gmail.com' ?></td>
-					<td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $id?>"><i class="fa fa-edit"></i></a></td>
-					<td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $id?>"><i class="fa fa-trash"></i></a></td>
+					<td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+					<td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
                 
                 
@@ -53,8 +53,8 @@
                     <td><?php echo '322457576' ?></td>
                     <td><?php echo 'Cr 23 # 56 C' ?></td>
                     <td><?php echo 'antonio2@gmail.com' ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-                    <td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+                    <td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+                    <td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
             
             
@@ -66,8 +66,8 @@
                     <td><?php echo '312475658' ?></td>
                     <td><?php echo 'Cr 21 # 67 B' ?></td>
                     <td><?php echo 'rafa234@gmail.com' ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo "editar.php?id=" . $producto->id?>"><i class="fa fa-edit"></i></a></td>
-                    <td><a class="btn btn-danger" href="<?php echo "eliminar.php?id=" . $producto->id?>"><i class="fa fa-trash"></i></a></td>
+                    <td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
+                    <td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                 
             
             
