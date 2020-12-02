@@ -1,5 +1,6 @@
 <?php
 require_once'model_usuario.php';
+require_once'model/usuario.php';
 class ClienteController{
 
     public $model_usuario;
@@ -12,6 +13,8 @@ class ClienteController{
     //Ejemplo no funcional
     public function ver_articulo(){
         require_once'view/cliente/ver_articulos.php';
+        require_once'view/cliente/index1.php';
+        echo "";
     
     }
     public function publicar(){

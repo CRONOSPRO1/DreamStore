@@ -1,4 +1,26 @@
-#fila {
-    background-color: rgba(209, 109, 109, 0.89) !important;
-    color: red;
+#may{
+background-color: rgba(22, 22, 21, 0.884) !important;
+color: rgb(223, 165, 124) !important;
+}
+
+#categoria{
+  background-color: rgb(26, 27, 22) !important;
+  color: rgb(253, 253, 255) !important;
+}
+
+#clase{
+  background-color: rgb(215, 216, 135) !important;
+  
+}
+
+#ofertas{
+  background-color: rgb(25, 26, 21) !important;
+  color: rgb(240, 235, 235) !important;
+  
+}
+
+#inferior{
+  background-color: rgb(211, 17, 33) !important;
+  color: rgb(27, 228, 201) !important;
+  
 }
