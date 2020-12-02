@@ -335,8 +335,90 @@ for ($mes = 0; $mes <= 12; $mes++) {
                     borderColor: '#007bff',
                     borderWidth: 4,
                     pointBackgroundColor: '#007bff'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
                 }
-            ]
+            }
+        })
+    })()
+</script>
+
+
+
+
+
+
+<!--Mostrar las ventas realizadas por una empresa-->
+
+<?php
+$data_ventas = array();
+for ($mes = 0; $mes <= 12; $mes++) {
+    foreach ($this->model_ventas->ventas_empresa(1, $mes) as $row) {
+        $data_ventas[] = $row['cantidad'];
+        echo  $row['cantidad'];
+    }
+}
+?>
+
+<script>
+    (function() {
+        'use strict'
+
+        feather.replace()
+
+        // Graphs
+        var ctx = document.getElementById('GraficoVentasEmpresa')
+        // eslint-disable-next-line no-unused-vars
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    'Enero',
+                    'Febrero',
+                    'Marzo',
+                    'Abril',
+                    'Mayo',
+                    'Junio',
+                    'Julio',
+                    'Agosto',
+                    'Septiembre',
+                    'Octubre',
+                    'Noviembre',
+                    'Diciembre'
+                ],
+                datasets: [{
+                    data: [
+                        '<?= $data_ventas['1'] ?>',
+                        '<?= $data_ventas['2'] ?>',
+                        '<?= $data_ventas['3'] ?>',
+                        '<?= $data_ventas['4'] ?>',
+                        '<?= $data_ventas['4'] ?>',
+                        '<?= $data_ventas['5'] ?>',
+                        '<?= $data_ventas['6'] ?>',
+                        '<?= $data_ventas['7'] ?>',
+                        '<?= $data_ventas['8'] ?>',
+                        '<?= $data_ventas['9'] ?>',
+                        '<?= $data_ventas['10'] ?>',
+                        '<?= $data_ventas['11'] ?>',
+                        '<?= $data_ventas['12'] ?>',
+                    ],
+                    label: "Productos publicados",
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#007bff'
+                }]
             },
             options: {
                 scales: {

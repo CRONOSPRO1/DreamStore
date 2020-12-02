@@ -23,7 +23,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($this->model_productos->productos_usuario_mostrar($_SESSION['id']) as $row) : ?>
+				<?php foreach ($this->model_productos->productos_usuario_mostrar($_SESSION['id_empresa']) as $row) : ?>
 					<tr>
 						<td><?=$row['id_producto']?></td>
 						<td><?=$row['nombre_producto']?></td>
@@ -31,7 +31,7 @@
 						<td><?=$row['estado']?></td>
 						<td><?=$row['marca']?></td>
 						<td><a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a></td>
-						<td><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
+						<td><a class="btn btn-danger" href="<?=base_url?>/Empresa/eliminar_producto?id=<?=$row['id_producto']?>"><i class="fa fa-trash"></i></a></td>
 					</tr>
 				<?php endforeach; ?>
 

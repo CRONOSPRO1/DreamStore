@@ -62,6 +62,14 @@ class productos{
         $stmt->closeCursor();
     }
 
+    //Para borrar un archivo
+    public function eliminar_productos($id){
+        $stmt=$this->conexion->conectar()->prepare("DELETE FROM productos WHERE id_producto=:id");
+        $stmt->bindParam(":id",$id,PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt->closeCursor();
+    }
+
     
 }
 

@@ -60,7 +60,7 @@ class EmpresaController extends FPDF
     }
 
     public function productos(){
-        $_SESSION['id']=1;
+        $_SESSION['id_empresa']=1;
         require("view/Empresa/Productos_Empresa.php");
     }
     public function recibo(){
@@ -75,6 +75,15 @@ class EmpresaController extends FPDF
     }
     public function ventas(){
         require("view/Empresa/Ventas_Empresa.php");
+    }
+
+
+    public function eliminar_producto(){
+        $id_producto=$_GET['id'];
+        echo $id_producto;
+       $this->model_productos->eliminar_productos($id_producto);
+
+        header("location:".base_url.'/Empresa/productos');
     }
 
 

@@ -14,7 +14,9 @@ class ClienteController{
         require_once'view/cliente/ver_articulos.php';
     
     }
-    
+    public function publicar(){
+        require_once("view/cliente/publicar_producto.php");
+    }
     public function Guardar_Producto(){
         if (!empty($_POST)) {
 
@@ -31,8 +33,6 @@ class ClienteController{
 
             $datos['ruta_imagen3']=base_url.$imagen3['imagen']['name'];
             move_uploaded_file($imagen3['imagen']['tmp_name'],$this->datos['ruta_imagen3']);
-
-        
 
             $this->model_productos->registrar($this->datos);
 
