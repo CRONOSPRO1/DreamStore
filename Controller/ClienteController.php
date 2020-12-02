@@ -1,5 +1,5 @@
 <?php
-require_once'model/usuarios.php';
+require_once'model/usuario.php';
 class ClienteController{
 
     public $model_usuario;
@@ -9,8 +9,8 @@ class ClienteController{
     }
 
     public function ver_articulo(){
-        require_once'view/cliente/ver_articulos.php';
-        echo "hola";
+        require_once'view/cliente/index1.php';
+        echo "";
     
     }
 
