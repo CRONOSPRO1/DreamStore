@@ -116,6 +116,7 @@ function Eliminar_Usarios() {
     $("#E_usuario").modal('show');
 }
 
+
 /*
 $("#perfil").click(function() {
     var notiabiertas = document.getElementById("ventanaperfil");

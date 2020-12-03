@@ -1,13 +1,15 @@
 <?php require_once 'view/layout/Empresa.php'; ?>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h6 class="h2">Home</h6>
+        <h6 class="h2">Home <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/></svg></h6>
 
     </div>
 
 
     <p>
-        <h6> Bienvenido a Dream Store, tu tienda de ensueño.</h6>
+        <h6> Bienvenido a Dream Store, tu tienda de ensueño </h6>
     </p>
     <p>
         Econtraras tu interfaz de proveedor en donde podras interactuar con las diferentes funciones que ofrece el sistema. <br> Acontinuacion encontraras un listado de las funciones que encontraras en el panel izquerdo de tu pantalla, en las cuales podras realizar funciones variada

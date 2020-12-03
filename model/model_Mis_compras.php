@@ -42,6 +42,15 @@ class mis_compras
         return $stmt->fetchAll();
         $stmt->closeCursor();
     }
+    public function listar_compras_usuario($id_usuario){
+        $stmt = $this->conexion->conectar()->prepare("
+        SELECT * FROM mis_compras 
+        INNER JOIN productos ON mis_compras.idProducto=productos.id_producto 
+        INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE condicion=1 and id_vendedor=$id_usuario");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
 
     //Datos para mostrar en la grafica
     public function compras_año($mes){
