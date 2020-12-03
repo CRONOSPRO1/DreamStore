@@ -32,7 +32,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="<?=base_url?>assets/css/dashboard_empresa.css" rel="stylesheet">
+    <link href="<?=base_url?>assets/css/dashboard.css" rel="stylesheet">
 </head>
 <script>
     $('.popover-dismiss').popover({

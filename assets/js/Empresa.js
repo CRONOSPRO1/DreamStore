@@ -1,6 +1,7 @@
-/* globals Chart:false, feather:false */
-
 (function() {
+
+
+
     'use strict'
 
     feather.replace()
@@ -24,29 +25,53 @@
                 'Octubre',
                 'Noviembre',
                 'Diciembre'
-
             ],
             datasets: [{
-                data: [
-                    3,
-                    5,
-                    8,
-                    3,
-                    49,
-                    22,
-                    34,
-                    11,
-                    33,
-                    23,
-                    2,
-                    2
-                ],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#0050fd',
-                borderWidth: 4,
-                pointBackgroundColor: '#0050fd'
-            }]
+                    data: [
+                        12,
+                        57,
+                        81,
+                        302,
+                        49,
+                        22,
+                        34,
+                        11,
+                        33,
+                        23,
+                        221,
+                        111
+                    ],
+                    label: "Usuarios eliminados",
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#0050fd',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#0050fd'
+                }, {
+                    data: [
+                        222,
+                        111,
+                        812,
+                        322,
+                        492,
+                        223,
+                        412,
+                        111,
+                        331,
+                        231,
+                        223,
+                        1232
+                    ],
+                    label: "Usuarios registrados",
+                    lineTension: 0,
+                    backgroundColor: 'rgba(252,72,7,0.84)',
+                    borderColor: '#0050fd',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#0050fd'
+
+                }
+
+            ]
         },
         options: {
             scales: {

@@ -34,7 +34,7 @@ class PDF extends FPDF
         $this->SetFillColor(255, 255, 255);
         $this->Cell(70, 10, 'Recibo de compra', 0, 1, 'C');
 
-        $this->Image('assets/fpdf/logo.png', 10, 10, 30);
+        $this->Image('assets/fpdf/logo.png', 10, 10, 50);
 
 
 

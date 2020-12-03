@@ -20,6 +20,15 @@ class productos{
         $stmt->closeCursor();
     }
 
+    public function listar_productos_carro($id){
+        $stmt=$this->conexion->conectar()->prepare("
+        SELECT * FROM cli_pro INNER JOIN productos ON cli_pro.id_cli_pro=productos.id_vendedor INNER JOIN categorias ON productos.categoria=categorias.id_categoria WHERE categoria=id_categoria AND condicion=1 AND id_producto=:id");
+        $stmt->bindParam(":id",$id,PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt->closeCursor();
+    }
+
     //Metodo para ver los productos publicados por un usuario
     public function productos_usuario($id_usuario){
         $stmt=$this->conexion->conectar()->prepare("SELECT count(*) AS resultado FROM productos where id_vendedor=:id_usuario");

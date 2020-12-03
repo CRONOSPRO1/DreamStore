@@ -78,7 +78,8 @@
                             } ?>',
                         '<?php foreach ($this->model_ventas->ventas_usuario($row['id_cli_pro']) as $resultado) {
                                 echo $resultado['resultado'];
-                            } ?>'
+                            } ?>',
+                            '<?=base_url.$row['imagen']?>'
                     
                         )">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +109,7 @@
                     <div class="card w-100">
                         <div class="card-header text-center" id="fondo_usuario">
 
-                            <img src="<?=base_url ?>assets/img/perfil.png" class="card-img-top rounded-circle bg-white rounded w-25" alt="...">
+                            <span id="imagen"></span>
                         </div>
                         <h5 class="card-title bg-dark text-white p-1 text-center" id="nombre"></h5>
 
