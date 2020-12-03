@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('config/parameters.php');
 require_once('model/model_usuario.php');
 require_once('model/model_productos.php');
@@ -81,6 +82,11 @@ class AdministradorController extends FPDF
         require_once 'view/Administrador/Quejas.php';
     }
 
+    public function prueba()
+    {
+        echo $_SESSION['id_administrador'];
+    }
+
 
     public function recibo()
     {
@@ -127,16 +133,18 @@ class AdministradorController extends FPDF
 
     public function Responder()
     {
-        $this->datos['id_queja']=$_POST['id_queja'];
-        $this->datos['respuesta']=$_POST['respuesta'];
+        $this->datos['id_queja'] = $_POST['id_queja'];
+        $this->datos['respuesta'] = $_POST['respuesta'];
         $this->model_quejas->responder_queja($this->datos);
-        header('location:'.base_url.'Administrador/Quejas');
+        header('location:' . base_url . 'Administrador/Quejas');
     }
 
-    public function EliminarQueja(){
-        $this->datos['id_queja']=$_GET['id'];
+    public function EliminarQueja()
+    {
+        $this->datos['id_queja'] = $_GET['id'];
         $this->model_quejas->eliminar_queja($this->datos);
-        header('location:'.base_url.'Administrador/Quejas');
-
+        header('location:' . base_url . 'Administrador/Quejas');
     }
+
+
 }

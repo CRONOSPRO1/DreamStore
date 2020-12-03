@@ -1,79 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once("view/layout/barrausuario.php");?>
+ <div class="container w-75">
+    <form action="" method="POST">
+      <div class="form-group w-100 ">
+        <label for="exampleInputtext">Nombre Del Producto*</label>
+        <input type="text" class="form-control text-white w-100" id="casilla">
+      </div>
+      <div class="form-group w-100 ">
+        <label for="exampleInputtext">Descripcion*</label>
+        <input type="text" class="form-control text-white" id="casilla">
+      </div>
+      <fieldset class="form-group w-100 ">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Cantidad*</legend>
+          <div class="col-sm-5">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="opcion" id="opcion1" value="option1" checked>
+              <label class="form-check-label" for="gridRadios1">
+                1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="opcion" id="opcion2" value="option2">
+              <label class="form-check-label" for="gridRadios2">
+                2
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="opcion" id="opcion3" value="option3">
+              <label class="form-check-label" for="gridRadios3">
+                3
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <form action="" method="POST">
+        <div class="form-group w-100 ">
+          <label for="exampleInputtext">Ciudad*</label>
+          <input type="text" class="form-control text-white" id="casilla">
+        </div>
+        <div class="form-group w-100 col-md-4 ">
+          <label for="inputState">Categoria*</label>
+          <select id="casilla" class="form-control text-white">
+            <option selected></option>
+            <option>Tecnologia</option>
+            <option>Salud</option>
+            <option>Moda y Accesorios</option>
+            <option>Belleza y Cuidado de la piel</option>
+            <option>Deportes</option>
+            <option>Bebes y Juguetes</option>
+            <option>Productos de Aseo</option>
+            <option>Supermercado</option>
+            <option>Carros y Motos</option>
+            <option>Inmuebles</option>
+            <option>Mascotas</option>
+            <option>Hogar y Decoracion</option>
+            <option>Libreria</option>
+            <option>Epoca del Año</option>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?= base_url ?>assets/css/menu.css" type="text/css">
-  <title>DREAM STORE</title>
-</head>
+          </select>
+        </div>
+        <div class="col">
+          <label for="exampleInputtext">Precio*</label>
+          <input type="text" class="form-control text-white" id="casilla" placeholder="ingrese el valor del producto">
+        </div>
+        <div class="col">
+          <label for="exampleInputtext ">Situacion Del Producto*</label>
+          <input type="text" class="form-control text-white" id="casilla" placeholder=" ingrese el estado en el que encuentra el producto">
+        </div>
+        <div class="col">
+          <label for="exampleInputtext">Marca Del Producto*</label>
+          <input type="text" class="form-control text-white" id="casilla" placeholder=" ingrese la marca del producto">
+        </div>
+        <div>
+          <label for="exampleInputtext">Fecha</label>
+          <input type="date" class="form-control text-white" id="casilla">
+        </div>
+        <form>
+          <div class="form-group w-100">
+            <label for="exampleFormControlFile1">Imagen Del Producto</label>
+            <input type="file" class="form-control-file" id="exampleFormimagen1">
+          </div>
+        </form>
+        <form>
+          <div class="form-group w-100">
+            <label for="exampleFormControlFile1">Imagen Del Producto</label>
+            <input type="file" class="form-control-file" id="exampleFormimagen1">
+          </div>
+        </form>
+        <form>
+          <div class="form-group w-100">
+            <label for="exampleFormControlFile1">Imagen Del Producto</label>
+            <input type="file" class="form-control-file" id="exampleFormimagen1">
+          </div>
+        </form>
 
-<body>
+      </form>
+      <button type="submit" class="btn btn-primary text-center">Publicar</button>
 
 
-<form>
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
-    </div>
+
+
+
   </div>
-</form>
+  </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-</body>
-
-</html>
+  <?php require_once("view/layout/footer.php") ?>

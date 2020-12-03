@@ -8,3 +8,11 @@ Para  pasar el id por parametro puedo hacer un foreach antes de cargar el modal
 
 -Graficos ->Chartjs
 -Busqueda ->Ajax
+
+
+
+-Inicios de sesion 
+-Registros
+-Ver producto
+-Buscar
+

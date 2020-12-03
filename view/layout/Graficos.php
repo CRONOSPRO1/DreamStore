@@ -286,7 +286,6 @@ for ($mes = 0; $mes <= 12; $mes++) {
 }
 ?>
 
-//
 <script>
     (function() {
         'use strict'
@@ -365,7 +364,6 @@ $data_ventas = array();
 for ($mes = 0; $mes <= 12; $mes++) {
     foreach ($this->model_ventas->ventas_empresa(1, $mes) as $row) {
         $data_ventas[] = $row['cantidad'];
-        echo  $row['cantidad'];
     }
 }
 ?>

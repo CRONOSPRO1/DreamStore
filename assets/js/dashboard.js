@@ -9,7 +9,7 @@
     feather.replace()
 
     // Graphs
-    var ctx = document.getElementById('myChart')
+    var ctx = document.getElementById('hola')
         // eslint-disable-next-line no-unused-vars
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -175,9 +175,12 @@ function queja_respondida(queja_respuesta, respuesta) {
 
 //Funcion que despliega la ventana modal de usuarios
 function mostrarDetalles_usuario(
-    nombre, apellido, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, compras_realizadas, quejas) {
+    nombre, apellido, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, compras_realizadas, quejas, imagen) {
     $('#usuarios').modal('show');
 
+    var input = " <img ";
+    var input2 = " class='card-img-top rounded-circle bg-white rounded w-25' alt='no encuento la imagen'>";
+    var imagen = input + "src='" + imagen + "'" + input2;
 
     var nombre_apellido = nombre + " " + apellido;
 
@@ -190,11 +193,15 @@ function mostrarDetalles_usuario(
     document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
     document.getElementById("compras_realizadas").innerHTML = compras_realizadas;
     document.getElementById("quejas").innerHTML = quejas;
+    document.getElementById("imagen").innerHTML = imagen;
 }
 
-function mostrarDetalles_empresa(nombre, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos) {
+function mostrarDetalles_empresa(nombre, numero_identificacion, ciudad, email, telefono, productos_publicados, productos_vendidos, imagen) {
     $('#empresas').modal('show');
 
+    var input = " <img ";
+    var input2 = " class='card-img-top rounded-circle bg-white rounded w-25' alt='no encuento la imagen'>";
+    var imagen = input + "src='" + imagen + "'" + input2;
 
     document.getElementById("nombre").innerHTML = nombre;
     document.getElementById("numero_identificacion").innerHTML = numero_identificacion;
@@ -203,6 +210,7 @@ function mostrarDetalles_empresa(nombre, numero_identificacion, ciudad, email, t
     document.getElementById("telefono").innerHTML = telefono;
     document.getElementById("productos_publicados").innerHTML = productos_publicados;
     document.getElementById("productos_vendidos").innerHTML = productos_vendidos;
+    document.getElementById("imagen").innerHTML = imagen;
 
 
 }
