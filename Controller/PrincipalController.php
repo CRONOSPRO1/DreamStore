@@ -144,8 +144,10 @@ class PrincipalController extends FPDF
 
     public function cerrarSesion(){
         session_destroy();
+        echo "cerrar";
         header("location:".base_url."Principal/Index");
     }
+
 
     
 
