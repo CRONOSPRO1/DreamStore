@@ -1,13 +1,12 @@
 <?php require_once("view/layout/barrausuario.php"); ?>
 <div class="float-righ w-90 p-90">
   <div class="container">
-    <div class="float-left w-10 p-10 bg-dark ">
-
-      <div class="dropdown aling-left pl-0 my-0 py-0 text-left">
-        <button class="btn btn-secondary dropdown-toggle text-body" id="categoria" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categoria
+    <div class="container w-100">
+      <div class="btn-group dropright">
+        <button type="button" class="btn  btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categorias
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="clase">
+        <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Tecnologia</a>
           <a class="dropdown-item" href="#">Salud</a>
           <a class="dropdown-item" href="#">Moda y Accesorios</a>
@@ -26,111 +25,70 @@
       </div>
     </div>
 
-
+    <div class="container w-75">
+      <!--carrousel-->
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="<?= base_url ?>assets/img/4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="<?= base_url ?>assets/img/1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="<?= base_url ?>assets/img/accesorios.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
 
     <div class="float-righ w-95 -95">
 
-      <div class="container">
-        <p class=" h2 text-center font-weight-bolder text-dark pl-3 my-3 py-3 ">Ofertas De La Semana</p>
-        <!--Productos-->
-        <div class="container ">
-          <ul class="list-inline">
-            <?php foreach ($this->model_productos->listar_productos() as $row) : ?>
-              <li class="list-inline-item mx-2 mt-3">
-                <div class="card text-center" style="width: 12rem;">
-                  <h5 class="card-title mt-2"><?= $row['nombre_producto'] ?></h5>
-                  <a href="<?= base_url?>Cliente/verproducto">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="<?= base_url ?><?= $row['imagen1'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="<?= base_url ?><?= $row['imagen2'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="<?= base_url ?><?= $row['imagen3'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                        </div>
+
+      <!--Productos-->
+      <div class="container text-center">
+        <h3>Productos</h3>
+      </div>
+      <div class="container ">
+
+        <ul class="list-inline">
+          <?php foreach ($this->model_productos->listar_productos() as $row) : ?>
+            <li class="list-inline-item mx-2 mt-3">
+              <div class="card text-center" style="width: 12rem;">
+                <h5 class="card-title mt-2"><?= $row['nombre_producto'] ?></h5>
+                <a href="">
+                  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="<?= base_url ?><?= $row['imagen1'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="<?= base_url ?><?= $row['imagen2'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="<?= base_url ?><?= $row['imagen3'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
                       </div>
                     </div>
-                  </a>
-                  <p class="card-text">Bogota D.C</p>
-                  <p class="card-text text-success">$35.000</p>
-                  <a href="<?= base_url ?>Principal/agregar?id=<?= $row['id_producto'] ?>" class="btn btn-primary">Agregar al carrito</a>
-                </div>
-              </li>
-            <?php endforeach; ?>
-
-          </ul>
-        </div>
-
-        <div class="container">
-          <p class=" h2 text-center font-weight-bolder text-dark pl-3 my-3 py-3 ">Mas Vendidos</p>
-          <!--Productos-->
-          <div class="container ">
-            <ul class="list-inline">
-              <?php foreach ($this->model_productos->listar_productos() as $row) : ?>
-                <li class="list-inline-item mx-2 mt-3">
-                  <div class="card text-center" style="width: 12rem;">
-                    <h5 class="card-title mt-2"><?= $row['nombre_producto'] ?></h5>
-                    <a href="">
-                      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="<?= base_url ?><?= $row['imagen1'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="<?= base_url ?><?= $row['imagen2'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="<?= base_url ?><?= $row['imagen3'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                    <p class="card-text">Bogota D.C</p>
-                    <p class="card-text text-success">$35.000</p>
-                    <a href="<?= base_url ?>Principal/agregar?id=<?= $row['id_producto'] ?>" class="btn btn-primary">Agregar al carrito</a>
                   </div>
-                </li>
-              <?php endforeach; ?>
+                </a>
+                <p class="card-text">Bogota D.C</p>
+                <p class="card-text text-success">$35.000</p>
+                <a href="<?= base_url ?>Cliente/agregar?id=<?= $row['id_producto'] ?>" class="btn btn-primary">Agregar al carrito</a>
+              </div>
+            </li>
+          <?php endforeach; ?>
 
-            </ul>
-          </div>
+        </ul>
+      </div>
+    </div>
 
-
-          <div class="container">
-            <p class=" h2 text-center font-weight-bolder text-dark pl-3 my-3 py-3 ">Mis Favoritos</p>
-            <!--Productos-->
-            <div class="container ">
-              <ul class="list-inline">
-                <?php foreach ($this->model_productos->listar_productos() as $row) : ?>
-                  <li class="list-inline-item mx-2 mt-3">
-                    <div class="card text-center" style="width: 12rem;">
-                      <h5 class="card-title mt-2"><?= $row['nombre_producto'] ?></h5>
-                      <a href="">
-                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="<?= base_url ?><?= $row['imagen1'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="<?= base_url ?><?= $row['imagen2'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="<?= base_url ?><?= $row['imagen3'] ?>" height="130px" width="100%" class="d-block w-100 p-3" alt="...">
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <p class="card-text">Bogota D.C</p>
-                      <p class="card-text text-success">$35.000</p>
-                      <a href="<?= base_url ?>Principal/agregar?id=<?= $row['id_producto'] ?>" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                  </li>
-                <?php endforeach; ?>
-
-              </ul>
-            </div>
-
-            <?php require_once("view/layout/footer.php") ?>
+    <?php require_once("view/layout/footer.php") ?>
+    <?php require_once("view/layout/footerUsuario.php") ?>

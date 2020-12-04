@@ -10,6 +10,55 @@ class productos{
         $this->conexion=new conexion();
         $this->año = date('Y');
     }
+    public function registrar($datos)
+    {
+        $stmt = $this->conexion->conectar()->prepare("
+        INSERT INTO productos
+        (
+            nombre_producto,
+            cantidad,
+            descripcion,
+            ciudad,
+            categoria,
+            precio,
+            marca,
+            id_vendedor,
+            imagen1,
+            imagen2,
+            imagen3
+        )
+        VALUES
+        (
+            :nombre_producto,
+            :cantidad,
+            :descripcion,
+            :ciudad,
+            :categoria,
+            :precio,
+            :marca,
+            :id_vendedor,
+            :imagen1,
+            :imagen2,
+            :imagen3
+        )
+        ");
+        $stmt->bindParam(":nombre_producto",$datos['nombre_producto'],PDO::PARAM_STR);
+        $stmt->bindParam(":cantidad",$datos['cantidad'],PDO::PARAM_STR);
+        $stmt->bindParam(":descripcion",$datos['descripcion'],PDO::PARAM_STR);
+        $stmt->bindParam(":ciudad",$datos['ciudad'],PDO::PARAM_STR);
+        $stmt->bindParam(":categoria",$datos['categoria'],PDO::PARAM_STR);
+        $stmt->bindParam(":precio",$datos['precio'],PDO::PARAM_STR);
+        $stmt->bindParam(":marca",$datos['marca'],PDO::PARAM_STR);
+        $stmt->bindParam(":id_vendedor",$datos['id_vendedor'],PDO::PARAM_STR);
+        $stmt->bindParam(":imagen1",$datos['imagen1'],PDO::PARAM_STR);
+        $stmt->bindParam(":imagen2",$datos['imagen2'],PDO::PARAM_STR);
+        $stmt->bindParam(":imagen3",$datos['imagen3'],PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt->closeCursor();
+        
+            
+        
+        }
 
     //Lista los productos pero solo de los usuarios que no se han eliminado 
     public function listar_productos(){
@@ -47,7 +96,7 @@ class productos{
 
     public function productos_agregados(){
         $stmt=$this->conexion->conectar()->prepare("SELECT COUNT(*) as resultado  FROM productos 
-        INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE MONTH(fecha) = MONTH(CURRENT_DATE()) and condicion=1");
+        INNER JOIN cli_pro ON productos.id_vendedor=cli_pro.id_cli_pro WHERE  condicion=1");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->closeCursor();
@@ -81,8 +130,3 @@ class productos{
 
     
 }
-
-
-
-
-?>

@@ -270,3 +270,25 @@ function mostrarDetalles_compras(
     document.getElementById("id_comprador").value = id_comprador;
 
 }
+
+function mostrarDetalles_compras_empresa(
+    id_compra, fecha_compra, nombre_producto, precio, nombre_vendedor, nombre_comprador, direccion, imagen, compra, id_comprador
+) {
+    $('#compras_empresa').modal('show');
+
+    var input = " <img ";
+    var input2 = " width='30em' height='30em' alt='Imagen no encontrada'>";
+    var imagen = input + "src='" + imagen + "'" + input2;
+
+    document.getElementById("id_compra").innerHTML = id_compra;
+    document.getElementById("fecha_compra").innerHTML = fecha_compra;
+    document.getElementById("nombre_producto").innerHTML = nombre_producto;
+    document.getElementById("precio").innerHTML = precio;
+    document.getElementById("nombre_vendedor").innerHTML = nombre_vendedor;
+    document.getElementById("nombre_comprador").innerHTML = nombre_comprador;
+    document.getElementById("direccion").innerHTML = direccion;
+    document.getElementById("imagen").innerHTML = imagen;
+    document.getElementById("compra").value = compra;
+    document.getElementById("id_comprador").value = id_comprador;
+
+}

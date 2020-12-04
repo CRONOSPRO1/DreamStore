@@ -43,7 +43,7 @@ class AdministradorController extends FPDF
 
     public function index()
     {
-        require_once 'view/Administrador/Home.php';
+        require_once 'view/Administrador/Usuarios.php';
     }
     public function usuarios()
     {
@@ -145,6 +145,4 @@ class AdministradorController extends FPDF
         $this->model_quejas->eliminar_queja($this->datos);
         header('location:' . base_url . 'Administrador/Quejas');
     }
-
-
 }

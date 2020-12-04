@@ -7,7 +7,7 @@
 
 	<div class="col-xs-12">
 		<div>
-			<a class="btn btn-success" data-toggle="modal" data-target="#agregarproductos">Nuevo <i class="fa fa-plus"></i></a>
+			<a class="btn btn-success" class="btn btn-primary" data-toggle="modal" data-target="#nuevo">Nuevo <i class="fa fa-plus"></i></a>
 		</div>
 		<br>
 		<table class="table table-bordered">
@@ -31,7 +31,7 @@
 						<td><?=$row['estado']?></td>
 						<td><?=$row['marca']?></td>
 						<td><a data-toggle="modal" data-target="#editar" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
-                    	<td><a data-toggle="modal" data-target="#eliminarproductos" class="btn btn-danger" ><i class="fa fa-trash"></i></a></td>
+                    	<td><a class="btn btn-danger" href="<?=base_url?>Empresa/eliminar_producto?id=<?=$row['id_producto']?>" ><i class="fa fa-trash"></i></a></td>
                 
 					</tr>
 				<?php endforeach; ?>
@@ -113,25 +113,8 @@
 		</div>
 	</div>
 
-	<!-- Modal Agregar -->
-	<div class="modal fade" id="agregarproductos" tabindex="-1" aria-labelledby="agregar" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="agregar">Agregar</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Hola</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
-		</div>
-	</div>
+<!-- Button trigger modal -->
+
+
 
 	<?php require_once 'view/layout/footer.php'; ?>

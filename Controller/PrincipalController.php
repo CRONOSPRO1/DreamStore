@@ -62,6 +62,7 @@ class PrincipalController extends FPDF
 
             if ($verificacion == 1) {
                 //Si es usuario
+                echo"AQQ";
                 if ($this->resultado[0]['rol'] == "usuario") {
                     $_SESSION['id_usuario'] = $this->resultado[0]['id_cli_pro'];
                     $_SESSION['nombre_usuario'] = $this->resultado[0]['nombre'];
@@ -83,7 +84,11 @@ class PrincipalController extends FPDF
                     header("location:" . base_url . "Administrador/Usuarios");
                 }
             }
+        }else{
+            echo '<script>alert("Contraseña incorrecta")</script>';
+            header("location:".base_url."Principal/index");
         }
+        
     }
 
     //Registrar usuarios
@@ -139,7 +144,7 @@ class PrincipalController extends FPDF
         echo $id;
         var_dump($_SESSION['carro_prueba']);
         unset($_SESSION['carro_prueba'][$id]);
-        //header("location:".base_url."Principal/carrito");
+        header("location:".base_url."Principal/carrito");
     }
 
     public function cerrarSesion(){
